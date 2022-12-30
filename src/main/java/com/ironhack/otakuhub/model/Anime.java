@@ -47,6 +47,7 @@ public class Anime {
 //    private Reviews reviews;
 //    private Episodes episodes;
 //    private AnimeCharacters animeCharacters;
+
 }
 
 
