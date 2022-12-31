@@ -1,9 +1,9 @@
 package com.ironhack.otakuhub.repository;
 
-import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.Quote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AnimeRepository extends JpaRepository<Anime, String> {
+public interface QuoteRepository extends JpaRepository<Quote, Long> {
 }
