@@ -8,6 +8,6 @@ spring:
     show-sql: true # show the commands that are being executed
     #    generate-ddl : true
     hibernate:
-      ddl-auto: create # create, create-drop, validate, none, update ....
+      ddl-auto: update # create, create-drop, validate, none, update ....
   profiles:
     active: demo

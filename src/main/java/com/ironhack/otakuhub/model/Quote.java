@@ -1,5 +1,6 @@
 package com.ironhack.otakuhub.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,9 +16,10 @@ public class Quote {
     private Long id;
 
     private String anime;
-    private String character;
+    @JsonProperty(value = "character")
+    private String charac;
     private String quote;
 
     @ManyToOne
-    private User user;
+    private User users;
 }

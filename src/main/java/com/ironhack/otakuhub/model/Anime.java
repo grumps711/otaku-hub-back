@@ -28,7 +28,7 @@ public class Anime {
     @OneToMany
     private List<Episode> episodesList;
     @ManyToOne
-    private User user;
+    private User users;
 
 //    private Title titles;
 //    private Double averageRating;
