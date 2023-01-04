@@ -1,6 +1,7 @@
 package com.ironhack.otakuhub.model;
 
 import com.ironhack.otakuhub.config.StringListConverter;
+import com.ironhack.otakuhub.dto.AnimeDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +31,25 @@ public class Anime {
     @ManyToOne
     private User users;
 
+
+    public static Anime fromAnimeDTO(AnimeDTO animeDTO){
+        var Anime = new Anime();
+        Anime.setAnimeId(animeDTO.getAnimeId());
+        Anime.setAnimeTitle(animeDTO.getAnimeTitle());
+        Anime.setAnimeImg(animeDTO.getAnimeImg());
+        Anime.setStatus(animeDTO.getStatus());
+        Anime.setType(animeDTO.getType());
+        Anime.setReleasedDate(animeDTO.getReleasedDate());
+        Anime.setGenres(animeDTO.getGenres());
+        Anime.setSynopsis(animeDTO.getSynopsis());
+        Anime.setTotalEpisodes(animeDTO.getTotalEpisodes());
+        Anime.setEpisodesList(animeDTO.getEpisodesList());
+        Anime.setUsers(animeDTO.getUsers());
+        return Anime;
+    }
+
+}
+
 //    private Title titles;
 //    private Double averageRating;
 //    private String startDate;
@@ -47,8 +67,6 @@ public class Anime {
 //    private Reviews reviews;
 //    private Episodes episodes;
 //    private AnimeCharacters animeCharacters;
-
-}
 
 
 

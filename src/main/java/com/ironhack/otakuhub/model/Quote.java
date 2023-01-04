@@ -1,6 +1,7 @@
 package com.ironhack.otakuhub.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ironhack.otakuhub.dto.QuoteDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,4 +23,12 @@ public class Quote {
 
     @ManyToOne
     private User users;
+
+    public static Quote fromQuoteDTO(QuoteDTO quoteDTO) {
+        var Quote = new Quote();
+        Quote.setAnime(quoteDTO.getAnime());
+        Quote.setCharac(quoteDTO.getCharac());
+        Quote.setQuote(quoteDTO.getQuote());
+        return Quote;
+    }
 }
