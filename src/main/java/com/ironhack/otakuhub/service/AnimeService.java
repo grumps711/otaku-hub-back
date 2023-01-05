@@ -12,6 +12,6 @@ import java.util.List;
 public class AnimeService {
     private final AnimeProxy animeProxy;
     public List<Anime> getAnimeByTitle(String keyw) {
-        return animeProxy.getAnimeUrl(keyw);
+        return animeProxy.getAnimesByName(keyw);
     }
 }

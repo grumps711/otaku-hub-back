@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,6 +21,10 @@ public class AnimeController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public List<Anime> getAnimeByTitle(@RequestParam String keyw){
         return animeService.getAnimeByTitle(keyw);
+    }
+
+    private String getRandomPage(){
+        return Integer.toString(new Random().nextInt(500-1) + 1);
     }
 
 
