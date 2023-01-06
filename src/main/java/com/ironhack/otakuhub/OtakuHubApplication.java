@@ -22,7 +22,7 @@ public class OtakuHubApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println((animeProxy.getAnimesByName("naruto")));
+        System.out.println((animeProxy.getAnimesByTitle("naruto")));
         System.out.println((quoteProxy.getRandomQuote()));
         System.out.println((animeProxy.getAnimeDetails("naruto")));
         System.out.println((animeProxy.getPopularAnimes(2)));
