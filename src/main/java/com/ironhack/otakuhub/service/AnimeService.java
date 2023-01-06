@@ -3,6 +3,7 @@ package com.ironhack.otakuhub.service;
 import com.ironhack.otakuhub.dto.AnimeDTO;
 import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.EpisodeStreamingUrl;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,8 @@ public class AnimeService {
         return animeProxy.getAnimesByGenre(genre);
     }
 
-   // public EpisodeUrlDTO getUrlEpisode(String episodeId) {
-   //     return animeProxy.getUrlEpisode(episodeId);
-   // }
+    public EpisodeStreamingUrl getEpisodeStreamingUrl(String episodeId) {
+        return animeProxy.getEpisodeStreamingUrl(episodeId);
+    }
+
 }

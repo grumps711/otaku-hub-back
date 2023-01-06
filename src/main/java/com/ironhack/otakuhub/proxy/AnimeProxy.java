@@ -28,16 +28,6 @@ public interface AnimeProxy {
     @GetMapping("/genre/{genre}")
     List<AnimeDTO> getAnimesByGenre(@PathVariable("genre") String genre);
 
-    //episodes url
-   // @GetMapping ("/streamsb/watch/")
-   //EpisodeStreamUrlDTO getUrlEpisode (@PathVariable ("episodeId") String episodeId);
-
     @GetMapping("/vidcdn/watch/{episodeId}")
     EpisodeStreamingUrl getEpisodeStreamingUrl(@PathVariable("episodeId") String episodeId);
-//
-  //  //Ultimos lanzamientos. Filtrado por type 1: japanese with subtitle.
-  //  // type 2: english dub with no subtitles. type 3: chinese with english subtitles
-  //  @GetMapping("/recent-release/{type}")
-  //  List<Anime> getRecentReleases(@PathVariable("type") int type);
-//
 }

@@ -3,6 +3,7 @@ package com.ironhack.otakuhub.controller;
 import com.ironhack.otakuhub.dto.AnimeDTO;
 import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.EpisodeStreamingUrl;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
 import com.ironhack.otakuhub.service.AnimeService;
 import lombok.RequiredArgsConstructor;
@@ -43,11 +44,11 @@ public class AnimeController {
         return animeService.getAnimesByGenre(genre);
     }
 
-   // @GetMapping ("/watch")
-   // @ResponseStatus(HttpStatus.ACCEPTED)
-   // public EpisodeUrlDTO getUrlEpisode (@RequestParam String episodeId) {
-   //     return animeService.getUrlEpisode (episodeId);
-   // }
+   @GetMapping ("/watch")
+   @ResponseStatus(HttpStatus.ACCEPTED)
+   public EpisodeStreamingUrl getEpisodeStreamingUrl (@RequestParam String episodeId) {
+        return animeService.getEpisodeStreamingUrl (episodeId);
+   }
 
 
 
