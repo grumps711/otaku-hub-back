@@ -50,6 +50,12 @@ public class AnimeController {
         return animeService.getEpisodeStreamingUrl (episodeId);
    }
 
+    @GetMapping ("/trivialQuote")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<String> getTrivialQuoute () {
+        return animeService.getTrivialQuoute ();
+    }
+
 
 
 
