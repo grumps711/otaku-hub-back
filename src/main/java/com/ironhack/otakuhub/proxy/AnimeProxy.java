@@ -1,6 +1,7 @@
 package com.ironhack.otakuhub.proxy;
 
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.EpisodeStreamingUrl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,8 @@ public interface AnimeProxy {
     @GetMapping("/genre/{genre}")
     List<Anime> getAnimesByGenre(@PathVariable("genre") String genre);
 
+    @GetMapping("/vidcdn/watch/{episodeId}")
+    EpisodeStreamingUrl getEpisodeStreamingUrl(@PathVariable("episodeId") String episodeId);
 //
   //  //Ultimos lanzamientos. Filtrado por type 1: japanese with subtitle.
   //  // type 2: english dub with no subtitles. type 3: chinese with english subtitles

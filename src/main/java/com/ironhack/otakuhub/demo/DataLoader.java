@@ -34,7 +34,7 @@ public class DataLoader {
             userRepository.save(user2);
             log.info("User " + user2.getUsername() + " was created successfully");
             log.info("Finished demo user loading.");
-        } catch (ConstraintViolationException e){
+        } catch (Exception e){
            System.out.println("Users exist already in the database");
            System.out.println(e.getMessage());
            System.out.println(e.getCause());

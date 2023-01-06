@@ -27,6 +27,6 @@ public class OtakuHubApplication implements CommandLineRunner {
         System.out.println((animeProxy.getAnimeDetails("naruto")));
         System.out.println((animeProxy.getPopularAnimes(2)));
         System.out.println((animeProxy.getAnimesByGenre("sports")));
-
+        System.out.println(animeProxy.getEpisodeStreamingUrl("one-piece-episode-1"));
     }
 }
