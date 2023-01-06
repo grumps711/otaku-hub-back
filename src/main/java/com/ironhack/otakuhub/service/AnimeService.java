@@ -1,20 +1,23 @@
 package com.ironhack.otakuhub.service;
 
 import com.ironhack.otakuhub.dto.AnimeDTO;
-import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
-import com.ironhack.otakuhub.model.Anime;
-import com.ironhack.otakuhub.model.EpisodeStreamingUrl;
-import com.ironhack.otakuhub.model.Quote;
+import com.ironhack.otakuhub.model.*;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
+import com.ironhack.otakuhub.proxy.TraceMoeProxy;
+import com.ironhack.otakuhub.repository.AnimeSceneImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
 public class AnimeService {
+
+    private final AnimeSceneImageRepository animeSceneImageRepository;
     private final AnimeProxy animeProxy;
+    private final TraceMoeProxy traceMoeProxy;
     private final QuoteService quoteService;
 
     public List<Anime> getAnimesByTitle(String keyw) {
@@ -83,4 +86,12 @@ public class AnimeService {
                         );
     }
 
+    public AnimesByScene getAnimesByScene(String anilistInfo, String url) {
+        return traceMoeProxy.getAnimesByScene(anilistInfo,url);
+    }
+
+    public AnimeSceneImage getRandomAnimesSceneImage() {
+        var allAnimeSceneImages = animeSceneImageRepository.findAll();
+        return allAnimeSceneImages.get(new Random().nextInt(allAnimeSceneImages.size()));
+    }
 }
