@@ -1,6 +1,9 @@
 package com.ironhack.otakuhub.proxy;
 
+import com.ironhack.otakuhub.dto.AnimeDTO;
+import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.EpisodeUrl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +16,21 @@ public interface AnimeProxy {
 
     //url de un anime
     @GetMapping ("/search")
-    List<Anime> getAnimesByName(@RequestParam String keyw);
+    List<Anime> getAnimesByTitle(@RequestParam String keyw);
 
     //url de un episodio específico y datos del anime
    @GetMapping("/anime-details/{id}")
-  Anime getAnimeDetails(@PathVariable("id") String id);
+   AnimeDTO getAnimeDetails(@PathVariable("id") String id);
 
     @GetMapping("/popular")
-    List<Anime> getPopularAnimes(@RequestParam int randomPage);
+    List<AnimeDTO> getPopularAnimes(@RequestParam (name = "page") int randomPage);
 
     @GetMapping("/genre/{genre}")
-    List<Anime> getAnimesByGenre(@PathVariable("genre") String genre);
+    List<AnimeDTO> getAnimesByGenre(@PathVariable("genre") String genre);
+
+    //episodes url
+   // @GetMapping ("/streamsb/watch/")
+   //EpisodeStreamUrlDTO getUrlEpisode (@PathVariable ("episodeId") String episodeId);
 
 //
   //  //Ultimos lanzamientos. Filtrado por type 1: japanese with subtitle.
@@ -31,8 +38,4 @@ public interface AnimeProxy {
   //  @GetMapping("/recent-release/{type}")
   //  List<Anime> getRecentReleases(@PathVariable("type") int type);
 //
-  //  //Lista de episodios por género
-  //  @GetMapping("/genre/{genre}")
-  //  List<Anime> getAnimeByGenre(@PathVariable("genre") String genre);
-
 }

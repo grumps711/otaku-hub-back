@@ -1,5 +1,7 @@
 package com.ironhack.otakuhub.controller;
 
+import com.ironhack.otakuhub.dto.AnimeDTO;
+import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
 import com.ironhack.otakuhub.model.Anime;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
 import com.ironhack.otakuhub.service.AnimeService;
@@ -19,9 +21,35 @@ public class AnimeController {
 
     @GetMapping ("/search")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public List<Anime> getAnimeByTitle(@RequestParam String keyw){
-        return animeService.getAnimeByTitle(keyw);
+    public List<Anime> getAnimesByTitle(@RequestParam String keyw){
+        return animeService.getAnimesByTitle(keyw);
     }
+
+    @GetMapping ("/anime-details")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public AnimeDTO getAnimeDetails (@RequestParam String id) {
+        return animeService.getAnimeDetails (id);
+    }
+
+    @GetMapping ("/popular")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<AnimeDTO> getPopularAnimes (@RequestParam int page) {
+        return animeService.getPopularAnimes (page);
+    }
+
+    @GetMapping ("/genre")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<AnimeDTO> getAnimesByGenre (@RequestParam String genre) {
+        return animeService.getAnimesByGenre(genre);
+    }
+
+   // @GetMapping ("/watch")
+   // @ResponseStatus(HttpStatus.ACCEPTED)
+   // public EpisodeUrlDTO getUrlEpisode (@RequestParam String episodeId) {
+   //     return animeService.getUrlEpisode (episodeId);
+   // }
+
+
 
 
 
