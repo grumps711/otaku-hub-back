@@ -23,6 +23,8 @@ public class AnimeController {
         return animeService.getAnimeByTitle(keyw);
     }
 
+
+
     private String getRandomPage(){
         return Integer.toString(new Random().nextInt(500-1) + 1);
     }
