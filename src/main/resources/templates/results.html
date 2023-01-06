@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include Bootstrap -->
+  <meta charset="UTF-8">
+  <title>Title</title>
+<!--  <script src="/js/bootstrap.min.js"></script>-->
+<!--  <link rel="stylesheet" href="\src\main\resources\static\styles.css"/>-->
+</head>
+
+<body>
+
+<div>
+  <h1>Results:</h1>
+</div>
+<div>
+    <div id="myData"></div>
+  <form
+          id="myForm"
+          method="get"
+          action="localhost:9090/public/anime/search?keyw=naruto"
+          >
+<!--          onsubmit=doIt()-->
+  >
+      <input
+              type="text"
+              name="anime"
+              id="anime-name"
+              placeholder="Enter anime name"
+              required
+      />
+    <input type="submit" name="submit">
+    </form>
+</div>
+<div>
+  <p id="animeTitle"></p>
+  <p id="status"></p>
+
+</div>
+
+
+<script>
+    fetch('http://localhost:9090/public/anime/search?keyw=naruto')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+
+    function appendData(data) {
+        var mainContainer = document.getElementById("myData");
+        for (var i = 0; i < data.length; i++) {
+            var div = document.createElement("div");
+            div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+            mainContainer.appendChild(div);
+        }
+    }
+</script>
+
+<!--<script-->
+<!--        src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js">-->
+<!--</script>-->
+<!--<script-->
+<!--        src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js">-->
+<!--</script>-->
+<!--<script type="text/babel">-->
+<!--  var app = new Vue({-->
+<!--    el: '#contents'-->
+<!--  });-->
+<!--</script>-->
+<!--<script src="/js/bootstrap.min.js"></script>-->
+</body>
+</html>
