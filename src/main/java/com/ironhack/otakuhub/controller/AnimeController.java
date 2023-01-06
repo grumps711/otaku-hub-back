@@ -3,6 +3,8 @@ package com.ironhack.otakuhub.controller;
 import com.ironhack.otakuhub.dto.AnimeDTO;
 import com.ironhack.otakuhub.dto.EpisodeUrlDTO;
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.AnimeSceneImage;
+import com.ironhack.otakuhub.model.AnimesByScene;
 import com.ironhack.otakuhub.model.EpisodeStreamingUrl;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
 import com.ironhack.otakuhub.service.AnimeService;
@@ -56,7 +58,17 @@ public class AnimeController {
         return animeService.getTrivialQuoute ();
     }
 
+    @GetMapping ("/sceneImage")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public AnimeSceneImage getRandomAnimesSceneImage () {
+        return animeService.getRandomAnimesSceneImage ();
+    }
 
+    @GetMapping ("/scene")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public AnimesByScene getAnimesByScene (@RequestParam String anilistInfo, @RequestParam String url) {
+        return animeService.getAnimesByScene (anilistInfo, url);
+    }
 
 
 
