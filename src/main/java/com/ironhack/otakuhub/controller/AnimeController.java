@@ -17,7 +17,7 @@ import java.util.Random;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/public/anime") //TODO eliminar public una vez que configuremos la security
+@RequestMapping("/anime") //TODO eliminar public una vez que configuremos la security
 public class AnimeController {
     private final AnimeService animeService;
     @GetMapping ("/search")
@@ -38,7 +38,7 @@ public class AnimeController {
         return animeService.getPopularAnimes (page);
     }
 
-    @GetMapping ("/genre")
+    @GetMapping ("/search/byGenre")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public List<AnimeDTO> getAnimesByGenre (@RequestParam String genre) {
         return animeService.getAnimesByGenre(genre);
@@ -62,7 +62,7 @@ public class AnimeController {
         return animeService.getRandomAnimesSceneImage ();
     }
 
-    @GetMapping ("/scene")
+    @GetMapping ("/search/byScene")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public AnimesByScene getAnimesByScene (@RequestParam String url) {
         return animeService.getAnimesByScene (url);
