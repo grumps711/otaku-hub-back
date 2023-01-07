@@ -1,6 +1,7 @@
 package com.ironhack.otakuhub.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ironhack.otakuhub.enums.Level;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,7 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.Instant;
 import java.util.List;
 
-import static com.ironhack.otakuhub.model.Level.NOOB;
+import static com.ironhack.otakuhub.enums.Level.NOOB;
 
 @Entity
 @Table(name = "users")

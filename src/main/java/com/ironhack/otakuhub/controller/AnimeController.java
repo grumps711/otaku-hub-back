@@ -64,8 +64,8 @@ public class AnimeController {
 
     @GetMapping ("/scene")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public AnimesByScene getAnimesByScene (@RequestParam String anilistInfo, @RequestParam String url) {
-        return animeService.getAnimesByScene (anilistInfo, url);
+    public AnimesByScene getAnimesByScene (@RequestParam String url) {
+        return animeService.getAnimesByScene (url);
     }
 
 

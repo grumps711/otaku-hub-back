@@ -86,8 +86,8 @@ public class AnimeService {
                         );
     }
 
-    public AnimesByScene getAnimesByScene(String anilistInfo, String url) {
-        return traceMoeProxy.getAnimesByScene(anilistInfo,url);
+    public AnimesByScene getAnimesByScene(String url) {
+        return traceMoeProxy.getAnimesByScene(url);
     }
 
     public AnimeSceneImage getRandomAnimesSceneImage() {
