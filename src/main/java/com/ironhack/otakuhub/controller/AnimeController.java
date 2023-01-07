@@ -20,8 +20,6 @@ import java.util.Random;
 @RequestMapping("/public/anime") //TODO eliminar public una vez que configuremos la security
 public class AnimeController {
     private final AnimeService animeService;
-    private final AnimeProxy animeProxy;
-
     @GetMapping ("/search")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public List<Anime> getAnimesByTitle(@RequestParam String keyw){
