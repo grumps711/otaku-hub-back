@@ -11,32 +11,8 @@ public class AnimesByScene {
     private List<AnimeByScene> possibleAnimes;
 }
 
-@Data
-class AnimeByScene {
-    @JsonProperty(value = "anilist")
-    private AnimeInfo animeInfo;
-    private String episode;
-    private Double similarity;
-    private String image;
-}
 
-@Data
-class AnimeInfo{
-    @JsonProperty(value = "id")
-    private Long anilistId;
-    @JsonProperty(value = "title")
-    private Title title;
-    @JsonProperty(value = "english")
-    private String englishTitle;
-}
 
-@Data
-class Title{
-    @JsonProperty(value = "romaji")
-    private String romajiTitle;
-    @JsonProperty(value = "english")
-    private String englishTitle;
-}
 
 
 
