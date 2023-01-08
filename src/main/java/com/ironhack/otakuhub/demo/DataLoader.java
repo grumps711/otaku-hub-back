@@ -62,10 +62,59 @@ public class DataLoader {
                     new AnimeSceneImage("https://static2.srcdn.com/wordpress/wp-content/uploads/2016/08/Brook-from-One-Piece.jpg"),
                     new AnimeSceneImage("https://cdn.myanimelist.net/s/common/uploaded_files/1445961164-5bbabbfe592ddae176ae5417b5662a6a.png"),
                     new AnimeSceneImage("https://qph.cf2.quoracdn.net/main-qimg-ab9dd5ca38bd7cfaa39eece4e4c0118a-lq"),
-                    new AnimeSceneImage("https://pbs.twimg.com/media/C03gpV-WQAAqxXf.jpg")
+                    new AnimeSceneImage("https://pbs.twimg.com/media/C03gpV-WQAAqxXf.jpg"),
+
+                //boku no hero
+                    new AnimeSceneImage("http://www.heypoorplayer.com/wp-content/uploads/2016/05/MyHeroAcademia8.jpg"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/UQeVkEJ19a4/maxresdefault.jpg"),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/bokunoheroacademia/images/1/1f/Episode_90.png/revision/latest?cb=20210403040340"),
+                    new AnimeSceneImage("https://i0.wp.com/100wordanime.blog/wp-content/uploads/2017/09/hero34.jpg?resize=648%2C363&ssl=1"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/oZJ-DTduQsA/maxresdefault.jpg"),
+
+                //haikyuu
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/BokutoKuroo1.png/revision/latest?cb=20151126062054"),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/c/ca/Hinata_VS_Kageyama.PNG/revision/latest/scale-to-width-down/1200?cb=20140407073702"),
+                    new AnimeSceneImage("http://4.bp.blogspot.com/-oK8HepDmGVg/U3bQ50ocYiI/AAAAAAAAAEA/Thk6zF72A8E/s1600/vlcsnap-2014-05-16-22h42m43s186.png"),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/S4E14.png/revision/latest?cb=20200928112808"),
+                    new AnimeSceneImage(""),
+
+                //run with the wind
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+
+                //kaiji
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+
+                //inazuma eleven
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+
+                //aku no hana
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+
+                //flcl
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("")
 
 
-            ));
+                    ));
             animeSceneImageRepository.saveAll(animeSceneImages);
         } catch (Exception e){
             System.out.println("Users exist already in the database");
