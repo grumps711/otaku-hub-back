@@ -54,4 +54,12 @@ public class User {
     public User() {
         isAccountNonLocked = true;
     }
+
+    public void addAnimeToAnimeList(Anime anime) {
+        animeList.add(anime);
+    }
+
+    public void addQuoteToQuoteList(Quote quote) {
+        animeQuotes.add(quote);
+    }
 }

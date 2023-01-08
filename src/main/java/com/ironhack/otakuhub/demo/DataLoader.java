@@ -49,7 +49,7 @@ public class DataLoader {
     public void loadAnimeSceneImages(){
         try{
             var animeSceneImages = new ArrayList<AnimeSceneImage>(List.of(
-//                ONEPIECE urls
+ //               ONEPIECE urls
                     new AnimeSceneImage("https://i.ytimg.com/vi/ijxqbG4_IDs/maxresdefault.jpg"),
                     new AnimeSceneImage("https://qph.cf2.quoracdn.net/main-qimg-9fa6865e15516fe240dfb758b49769ed-lq"),
                     new AnimeSceneImage("https://imgix.ranker.com/list_img_v2/14221/3194221/original/3194221"),
@@ -65,14 +65,13 @@ public class DataLoader {
                     new AnimeSceneImage("https://pbs.twimg.com/media/C03gpV-WQAAqxXf.jpg")
 
 
-            ));
-            animeSceneImageRepository.saveAll(animeSceneImages);
-        } catch (Exception e){
-            System.out.println("Users exist already in the database");
-            System.out.println(e.getMessage());
-            System.out.println(e.getCause());
-
-        }
+           ));
+           animeSceneImageRepository.saveAll(animeSceneImages);
+       } catch (Exception e){
+           System.out.println("Users exist already in the database");
+           System.out.println(e.getMessage());
+           System.out.println(e.getCause());
+       }
 
     }
 
