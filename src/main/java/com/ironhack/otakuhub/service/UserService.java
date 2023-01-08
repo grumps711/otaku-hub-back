@@ -2,11 +2,12 @@ package com.ironhack.otakuhub.service;
 
 import com.ironhack.otakuhub.dto.UserDTO;
 import com.ironhack.otakuhub.enums.Level;
+import com.ironhack.otakuhub.exception.UsernameNotFoundException;
 import com.ironhack.otakuhub.model.Anime;
 import com.ironhack.otakuhub.model.Quote;
 import com.ironhack.otakuhub.model.User;
 import com.ironhack.otakuhub.repository.UserRepository;
-import exception.UserNotFoundException;
+import com.ironhack.otakuhub.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -75,5 +76,22 @@ public class UserService {
 
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    public User addPoints(String username) {
+            var userToAddPoints = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
+            userToAddPoints.addPoints();
+
+        return userRepository.save (userToAddPoints);
+    }
+
+    public Boolean userExist(String username) {
+        var userToCheck = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
+        if (userToCheck != null) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

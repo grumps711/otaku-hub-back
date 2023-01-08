@@ -62,4 +62,8 @@ public class User {
     public void addQuoteToQuoteList(Quote quote) {
         animeQuotes.add(quote);
     }
+
+    public void addPoints () {
+        this.points++;
+    }
 }

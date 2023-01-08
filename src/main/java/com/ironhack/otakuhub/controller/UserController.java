@@ -74,7 +74,19 @@ public class UserController {
         return userService.updateUserByUser (id, username,password,anime);
     }
 
+    @PatchMapping("/{username}")
+    public User addPoints (@PathVariable String username,
+                           @RequestParam int points){
+        return userService.addPoints(username);
+    }
 
+    /*
+    comprobación si el usuario está en la base de datos: a partir del username
+     */
+    @GetMapping ("checkuser/{username}")
+    public Boolean userExist (String username) {
+        return userService.userExist (username);
+    }
 
 
 
