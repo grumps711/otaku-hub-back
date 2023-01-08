@@ -1,5 +1,6 @@
 package com.ironhack.otakuhub.controller;
 
+import com.ironhack.otakuhub.model.TrivialResponse;
 import com.ironhack.otakuhub.service.TrivialService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,13 +19,13 @@ public class TrivialController {
 
     @GetMapping("/quote")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public List<String> getTrivialQuoute () {
+    public TrivialResponse getTrivialQuoute () {
         return trivialService.getTrivialQuote ();
     }
 
     @GetMapping("/sceneImage")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public List<String> getTrivialSceneImage () {
+    public TrivialResponse getTrivialSceneImage () {
         return trivialService.getTrivialSceneImage ();
     }
 
