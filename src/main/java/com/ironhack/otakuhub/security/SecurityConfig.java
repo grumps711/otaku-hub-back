@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .requestMatchers("/quote/**").permitAll()
                 .requestMatchers("/trivial/**").permitAll()
                 .requestMatchers("/users/**").permitAll()
-//                .requestMatchers(HttpMethod.GET, "/top-secret/ultra").hasRole("ADMIN")
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

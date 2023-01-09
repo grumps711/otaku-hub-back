@@ -21,7 +21,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
-    private String username;
+    private String username; // username is an email!!
     private String password;
     private String roles;
     private Boolean isAccountNonLocked;
