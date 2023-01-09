@@ -8,12 +8,15 @@ import com.ironhack.otakuhub.model.Quote;
 import com.ironhack.otakuhub.model.User;
 import com.ironhack.otakuhub.repository.UserRepository;
 import com.ironhack.otakuhub.exception.UserNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+import static com.ironhack.otakuhub.enums.Level.NOOB;
 
 @Service
 @RequiredArgsConstructor
@@ -28,15 +31,19 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         user.setUsername(userDTO.getUsername());
         user.setRoles("ROLE_USER");
+        user.setPoints(0);
+        user.setLevel(Level.NOOB);
         return userRepository.save(user);
 
     }
 
-    public void deleteUser(String username) {
-        userRepository.deleteByUsername(username);
+    public List<User> deleteUserByUsername(String username) {
+        findUserByUsername (username);
+        return userRepository.deleteUserByUsername(username);
     }
 
-    public User updateUserByAdmin (String username,
+    public User updateUserByAdmin ( String username, //as id
+                                    Optional <String> username1, //username = username1
                                     Optional<String> password,
                                     Optional<String> roles,
                                     Optional<Boolean> isAccountNonLocked,
@@ -45,9 +52,9 @@ public class UserService {
                                     Optional<Anime> anime,
                                     Optional<Quote> animeQuote) {
 
-        var userToUpdate = (username);
+        var userToUpdate = findUserByUsername (username);
 
-        username.ifPresent(userToUpdate::setUsername);
+        username1.ifPresent (userToUpdate::setUsername);
         password.ifPresent(userToUpdate::setPassword);
         roles.ifPresent(userToUpdate::setRoles);
         isAccountNonLocked.ifPresent(userToUpdate::setIsAccountNonLocked);
@@ -59,15 +66,19 @@ public class UserService {
         return userRepository.save(userToUpdate);
     }
 
+    private User findUserByUsername(String username) {
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
+    }
+
     private User findUserById(Long id) {
         return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    public User updateUserByUser(Long id, Optional<String> username, Optional<String> password, Optional<Anime> anime) {
+    public User updateUserByUser(String username, Optional <String> username1, Optional<String> password, Optional<Anime> anime) {
 
-        var userToUpdate = findUserById (id);
+        var userToUpdate = findUserByUsername (username);
 
-        username.ifPresent(userToUpdate::setUsername);
+        username1.ifPresent(userToUpdate::setUsername);
         password.ifPresent(userToUpdate::setPassword);
         anime.ifPresent(userToUpdate::addAnimeToAnimeList);
 

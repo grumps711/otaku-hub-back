@@ -28,8 +28,8 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/create")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PostMapping("/create")
+    @ResponseStatus (HttpStatus.CREATED)
     public User createUser (@RequestBody UserDTO userDTO) {
         return userService.createUser (userDTO);
     }
@@ -37,18 +37,19 @@ public class UserController {
     /**
     Borrar usuario: accesible por usuario y admin
      */
-    @DeleteMapping("/{username}")
+    @DeleteMapping("/delete/{username}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser (@PathVariable ("username") String username) {
-        userService.deleteUser(username);
+    public List<User> deleteUser (@PathVariable ("username") String username) {
+        return userService.deleteUserByUsername(username);
     }
 
     /**
     updateUSerByAdmin puede modificar todos los campos del objeto usuario
     Este método solo es accesible por el administrador
      */
-    @PutMapping("admin/udpateUser/{username}")
+    @PatchMapping("admin/updateUser/{username}")
     public User updateUserByAdmin (@PathVariable String username,
+                                    @RequestParam Optional <String> username1,
                                     @RequestParam Optional <String> password,
                                     @RequestParam Optional <String> roles,
                                     @RequestParam Optional <Boolean> isAccountNonLocked,
@@ -56,26 +57,24 @@ public class UserController {
                                     @RequestParam Optional <Level> level,
                                     @RequestParam Optional <Anime> anime,
                                     @RequestParam Optional <Quote> animeQuote){
-        return userService.updateUserByAdmin (username, password, roles, isAccountNonLocked, points, level, anime, animeQuote);
+        return userService.updateUserByAdmin (username,username1, password, roles, isAccountNonLocked, points, level, anime, animeQuote);
     }
 
     /**
     updateUserByUser: solo actualiza el username y el password
     endpoint accesible por el usuario
      */
-
-    @PutMapping("user/udpateUser/{id}")
-    public User updateUserByUser (@PathVariable Long id,
-                                   @RequestParam Optional<String> username,
+    @PatchMapping("updateByUser/{username}")
+    public User updateUserByUser (@PathVariable String username,
+                                   @RequestParam Optional<String> username1,
                                    @RequestParam Optional <String> password,
                                    @RequestParam Optional <Anime> anime
                                    ){
-        return userService.updateUserByUser (id, username,password,anime);
+        return userService.updateUserByUser (username, username1,password,anime);
     }
 
-    @PatchMapping("/{username}")
-    public User addPoints (@PathVariable String username,
-                           @RequestParam int points){
+    @PatchMapping("/addpoints/{username}")
+    public User addPoints (@PathVariable String username){
         return userService.addPoints(username);
     }
 
