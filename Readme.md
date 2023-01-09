@@ -1,3 +1,25 @@
+# Notas 9 Enero
+
+* Para comprobar si el username está en la base de datos, usaremos Supabase (base de datos de front).
+* Demo:
+    * empezar sin usuarios en las basede datos de supabase y back end
+    * desde la pagina de login, crearemos un usuario en la página de Sign up
+    * Una vez creado se crea el usuario en la base de datos de Supabase y en el 
+    
+* Security
+  * crear un metodo "create user": en la securityConfig hay que indicar que el endoPoint no requiere
+  * SecurityConfig: linea 31-32
+    * requestMatchers("/public/**").permitAll() --> las rutas con "public" no será necesario autentificación
+    * .requestMatchers(HttpMethod.GET, "/top-secret/ultra").hasRole("ADMIN") --> para acceder a los endpoints con las rutas con "/top-secrete/ultra" es necesario tener el role "ADMIN
+    ![image](https://user-images.githubusercontent.com/115550667/211384308-32edc338-9d27-48ac-97f6-3440371f1c58.png)
+
+
+* endPonit createUser --> pendiente de defnir como recibir en el endpoint: como objeto o como Username + password
+
+* limite de busqueda de imagenes en https://trace.moe. --> probar:
+  * si usando Postman se llega al limite
+
+---
 # Notas 8 Enero.  
 
 * Crear una página para login: username & password
