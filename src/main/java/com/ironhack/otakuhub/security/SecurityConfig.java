@@ -28,7 +28,7 @@ public class SecurityConfig {
         return http
                 .csrf().disable()
                 .authorizeHttpRequests()
-//                .requestMatchers("/public/**").permitAll()
+                .requestMatchers(HttpMethod.GET,"/anime/search").permitAll()
 //                .requestMatchers(HttpMethod.GET, "/top-secret/ultra").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()

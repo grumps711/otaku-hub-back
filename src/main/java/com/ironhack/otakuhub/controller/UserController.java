@@ -20,9 +20,9 @@ public class UserController {
 
     private final UserService userService;
 
-    /*
-    Listar todos los usuarios de la base de datos
-     */
+/**
+* Listar todos los usuarios de la base de datos
+*/
     @GetMapping
     public List<User> getAllUsers () {
         return userService.findAll();
@@ -34,22 +34,21 @@ public class UserController {
         return userService.createUser (userDTO);
     }
 
-    /*
+    /**
     Borrar usuario: accesible por usuario y admin
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{username}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser (@PathVariable ("id") Long id) {
-        userService.deleteUser(id);
+    public void deleteUser (@PathVariable ("username") String username) {
+        userService.deleteUser(username);
     }
 
-    /*
+    /**
     updateUSerByAdmin puede modificar todos los campos del objeto usuario
     Este método solo es accesible por el administrador
      */
-    @PutMapping("admin/udpateUser/{id}")
-    public User updateUserByAdmin (@PathVariable Long id,
-                                    @RequestParam Optional<String> username,
+    @PutMapping("admin/udpateUser/{username}")
+    public User updateUserByAdmin (@PathVariable String username,
                                     @RequestParam Optional <String> password,
                                     @RequestParam Optional <String> roles,
                                     @RequestParam Optional <Boolean> isAccountNonLocked,
@@ -57,10 +56,10 @@ public class UserController {
                                     @RequestParam Optional <Level> level,
                                     @RequestParam Optional <Anime> anime,
                                     @RequestParam Optional <Quote> animeQuote){
-        return userService.updateUserByAdmin (id, username, password, roles, isAccountNonLocked, points, level, anime, animeQuote);
+        return userService.updateUserByAdmin (username, password, roles, isAccountNonLocked, points, level, anime, animeQuote);
     }
 
-    /*
+    /**
     updateUserByUser: solo actualiza el username y el password
     endpoint accesible por el usuario
      */
@@ -80,7 +79,7 @@ public class UserController {
         return userService.addPoints(username);
     }
 
-    /*
+    /**
     comprobación si el usuario está en la base de datos: a partir del username
      */
     @GetMapping ("checkuser/{username}")

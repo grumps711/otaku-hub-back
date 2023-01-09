@@ -32,11 +32,11 @@ public class UserService {
 
     }
 
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+    public void deleteUser(String username) {
+        userRepository.deleteByUsername(username);
     }
 
-    public User updateUserByAdmin (Long id, Optional<String> username,
+    public User updateUserByAdmin (String username,
                                     Optional<String> password,
                                     Optional<String> roles,
                                     Optional<Boolean> isAccountNonLocked,
@@ -45,7 +45,7 @@ public class UserService {
                                     Optional<Anime> anime,
                                     Optional<Quote> animeQuote) {
 
-        var userToUpdate = findUserById (id);
+        var userToUpdate = (username);
 
         username.ifPresent(userToUpdate::setUsername);
         password.ifPresent(userToUpdate::setPassword);
