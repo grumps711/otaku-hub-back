@@ -1,6 +1,7 @@
 package com.ironhack.otakuhub.service;
 
 import com.ironhack.otakuhub.dto.AnimeDTO;
+import com.ironhack.otakuhub.model.TrivialResponse;
 import com.ironhack.otakuhub.proxy.TraceMoeProxy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,16 +26,14 @@ public class TrivialService {
  *      4. wrongAnswer2: un anime aleatorio que se obtienen de la API "gogoanime.../popular"
  *      @return list  de String con quoteString, correctAnswer,wrongAnswer1, wrongAnswwer2
  */
-    public List<String> getTrivialQuote () {
+    public TrivialResponse getTrivialQuote () {
         //Creo un objeto quote que será la pregunta del trivial
         var quoteObject = quoteService.getRandomQuote();
         var quoteString = quoteObject.getQuote();
         var correctAnswer = quoteObject.getAnime();
-
         var otherTwoAnswers = getOtherTwoAnswers(correctAnswer);
 
-        return new ArrayList<String>(List.of(quoteString,
-                correctAnswer, otherTwoAnswers.get(0), otherTwoAnswers.get(1)));
+        return new TrivialResponse (null,quoteString,correctAnswer,otherTwoAnswers.get(0), otherTwoAnswers.get(1));
 
 
     }
@@ -77,12 +76,11 @@ public class TrivialService {
 
     }
 
-    public List<String> getTrivialSceneImage() {
+    public TrivialResponse getTrivialSceneImage() {
         var imageScene = animeService.getRandomAnimeSceneImage().getUrl();
         var correctAnswer = traceMoeProxy.getAnimesByScene(imageScene).getPossibleAnimes().get(0).getAnimeInfo().getTitle().getRomajiTitle();
         var otherTwoAnswers = getOtherTwoAnswers(correctAnswer);
 
-        return new ArrayList<String>(List.of(imageScene,
-                correctAnswer, otherTwoAnswers.get(0), otherTwoAnswers.get(1)));
+        return new TrivialResponse(imageScene,null,correctAnswer, otherTwoAnswers.get(0), otherTwoAnswers.get(1));
     }
 }

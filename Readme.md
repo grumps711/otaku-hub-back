@@ -1,3 +1,12 @@
+# Notas 8 Enero.  
+
+* Crear una página para login: username & password
+   * endopoint : recibe jugador y suma puntos --> dentro del Trivialler Controller (GoodAnswer)
+   * endopoint : para comprobar si el usuario loggeado está crear una página para login en la base de datos (confirmar con Euge la viabilidad de hacerlo en Front)
+* añadir en la configuración de la seguridad: que endpoints puede user el admin y el resto de user
+
+
+---
 # Notas 7 enero. 
 
 * Lisa se mirará como enlazar IntelliJ con VSCode

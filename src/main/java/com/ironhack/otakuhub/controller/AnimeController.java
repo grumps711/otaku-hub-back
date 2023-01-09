@@ -61,12 +61,4 @@ public class AnimeController {
     public AnimesByScene getAnimesByScene (@RequestParam String url) {
         return animeService.getAnimesByScene (url);
     }
-
-
-
-    private String getRandomPage(){
-        return Integer.toString(new Random().nextInt(500-1) + 1);
-    }
-
-
 }
