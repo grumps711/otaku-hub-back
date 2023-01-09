@@ -5,13 +5,11 @@ import com.ironhack.otakuhub.proxy.QuoteProxy;
 import com.ironhack.otakuhub.service.AnimeService;
 import com.ironhack.otakuhub.service.QuoteService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/quote")
