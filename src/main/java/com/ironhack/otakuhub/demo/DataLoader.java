@@ -120,7 +120,6 @@ public class DataLoader {
             System.out.println("Users exist already in the database");
             System.out.println(e.getMessage());
             System.out.println(e.getCause());
-
         }
 
     }
