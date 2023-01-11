@@ -1,11 +1,13 @@
 package com.ironhack.otakuhub.service;
 
+import com.ironhack.otakuhub.dto.AnimeDTO;
 import com.ironhack.otakuhub.dto.UserDTO;
 import com.ironhack.otakuhub.enums.Level;
 import com.ironhack.otakuhub.exception.UsernameNotFoundException;
 import com.ironhack.otakuhub.model.Anime;
 import com.ironhack.otakuhub.model.Quote;
 import com.ironhack.otakuhub.model.User;
+import com.ironhack.otakuhub.proxy.AnimeProxy;
 import com.ironhack.otakuhub.repository.UserRepository;
 import com.ironhack.otakuhub.exception.UserNotFoundException;
 import jakarta.transaction.Transactional;
@@ -24,6 +26,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final AnimeProxy animeProxy;
 
 
     public User createUser(UserDTO userDTO) {
@@ -74,13 +77,12 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    public User updateUserByUser(String username, Optional <String> username1, Optional<String> password, Optional<Anime> anime) {
+    public User updateUserByUser(String username, Optional <String> username1, Optional<String> password) {
 
         var userToUpdate = findUserByUsername (username);
 
         username1.ifPresent(userToUpdate::setUsername);
         password.ifPresent(userToUpdate::setPassword);
-        anime.ifPresent(userToUpdate::addAnimeToAnimeList);
 
         return userRepository.save(userToUpdate);
     }
@@ -104,5 +106,30 @@ public class UserService {
         else {
             return false;
         }
+    }
+    public User addAnimeToUser(String username, String animeId) {
+        var userToUpdate = findUserByUsername(username);
+        var animeDTO = new AnimeDTO ();
+        animeDTO = animeProxy.getAnimeDetails(animeId);
+
+        var animeToAdd = new Anime ();
+
+        //Traducción de animeDTO --> Anime
+        animeToAdd.setAnimeId(animeDTO.getAnimeId());
+        animeToAdd.setAnimeTitle(animeDTO.getAnimeTitle());
+        animeToAdd.setAnimeImg(animeDTO.getAnimeImg());
+        animeToAdd.setStatus(animeDTO.getStatus());
+        animeToAdd.setType(animeDTO.getType());
+        animeToAdd.setReleasedDate(animeDTO.getReleasedDate());
+        animeToAdd.setGenres(animeDTO.getGenres());
+        animeToAdd.setSynopsis(animeDTO.getSynopsis());
+        animeToAdd.setTotalEpisodes(animeDTO.getTotalEpisodes());
+        animeToAdd.setEpisodesList(animeDTO.getEpisodesList());
+        animeToAdd.setUsers(animeDTO.getUsers());
+
+        if(!animeToAdd.getAnimeId().isEmpty()){
+            userToUpdate.addAnimeToAnimeList(animeToAdd);
+        };
+        return userRepository.save(userToUpdate);
     }
 }

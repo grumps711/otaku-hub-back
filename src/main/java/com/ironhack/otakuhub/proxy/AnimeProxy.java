@@ -19,8 +19,8 @@ public interface AnimeProxy {
     List<Anime> getAnimesByTitle(@RequestParam String keyw);
 
     //url de un episodio específico y datos del anime
-   @GetMapping("/anime-details/{id}")
-   AnimeDTO getAnimeDetails(@PathVariable("id") String id);
+   @GetMapping("/anime-details/{animeId}")
+   AnimeDTO getAnimeDetails(@PathVariable("animeId") String animeId);
 
     @GetMapping("/popular")
     List<AnimeDTO> getPopularAnimes(@RequestParam (name = "page") int randomPage);
