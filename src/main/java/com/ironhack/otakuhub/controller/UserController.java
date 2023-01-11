@@ -24,10 +24,16 @@ public class UserController {
 /**
 * Listar todos los usuarios de la base de datos
 */
-    @GetMapping
+    @GetMapping("/getAll")
     public List<User> getAllUsers () {
         return userService.findAll();
     }
+
+    @GetMapping("/getByUsername")
+    public User getUserByUsername(@RequestParam(name = "username") String username){
+        return userService.getUser(username);
+    }
+
 
     @PostMapping("/create")
     @ResponseStatus (HttpStatus.CREATED)
