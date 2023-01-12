@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.ironhack.otakuhub.enums.Level.NOOB;
@@ -49,6 +50,8 @@ public class User {
         isAccountNonLocked = true;
         this.points = 0;
         this.level = NOOB;
+        this.animeList = new ArrayList<Anime>(List.of(new Anime()));
+        this.animeQuotes = new ArrayList<Quote>(List.of(new Quote()));
     }
 
     public User() {
