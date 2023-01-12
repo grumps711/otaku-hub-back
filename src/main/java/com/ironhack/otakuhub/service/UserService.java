@@ -5,9 +5,12 @@ import com.ironhack.otakuhub.dto.UserDTO;
 import com.ironhack.otakuhub.enums.Level;
 import com.ironhack.otakuhub.exception.UsernameNotFoundException;
 import com.ironhack.otakuhub.model.Anime;
+import com.ironhack.otakuhub.model.Episode;
 import com.ironhack.otakuhub.model.Quote;
 import com.ironhack.otakuhub.model.User;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
+import com.ironhack.otakuhub.repository.AnimeRepository;
+import com.ironhack.otakuhub.repository.EpisodeRepository;
 import com.ironhack.otakuhub.repository.UserRepository;
 import com.ironhack.otakuhub.exception.UserNotFoundException;
 import jakarta.transaction.Transactional;
@@ -27,6 +30,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AnimeProxy animeProxy;
+    private final AnimeRepository animeRepository;
+    private final EpisodeRepository episodeRepository;
 
 
     public User createUser(UserDTO userDTO) {
@@ -115,19 +120,24 @@ public class UserService {
         var animeToAdd = new Anime ();
 
         //Traducción de animeDTO --> Anime
-        animeToAdd.setAnimeId(animeDTO.getAnimeId());
+        animeToAdd.setAnimeId("");
         animeToAdd.setAnimeTitle(animeDTO.getAnimeTitle());
         animeToAdd.setAnimeImg(animeDTO.getAnimeImg());
         animeToAdd.setStatus(animeDTO.getStatus());
         animeToAdd.setType(animeDTO.getType());
         animeToAdd.setReleasedDate(animeDTO.getReleasedDate());
         animeToAdd.setGenres(animeDTO.getGenres());
-        animeToAdd.setSynopsis(animeDTO.getSynopsis());
+        //animeToAdd.setSynopsis(animeDTO.getSynopsis());
         animeToAdd.setTotalEpisodes(animeDTO.getTotalEpisodes());
         animeToAdd.setEpisodesList(animeDTO.getEpisodesList());
         animeToAdd.setUsers(animeDTO.getUsers());
 
-        if(!animeToAdd.getAnimeId().isEmpty()){
+        for (Episode episode:animeToAdd.getEpisodesList()){
+            episodeRepository.save (episode);
+        }
+        animeToAdd = animeRepository.save (animeToAdd);
+
+        if(!animeToAdd.getAnimeTitle().isEmpty()){
             userToUpdate.addAnimeToAnimeList(animeToAdd);
         };
         return userRepository.save(userToUpdate);

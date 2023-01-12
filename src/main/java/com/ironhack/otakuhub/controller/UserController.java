@@ -81,8 +81,8 @@ public class UserController {
      * @return Anime
      */
     @PatchMapping("public/addanime/{username}")
-    public User addAnime (@PathVariable String username,
-                           @RequestParam String animeId){
+    public User addAnime (@PathVariable (name = "username") String username,
+                           @RequestParam (name = "animeId")String animeId){
         return userService.addAnimeToUser(username, animeId);
     }
 

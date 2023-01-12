@@ -34,11 +34,11 @@ public class User {
     private Level level;
 
     @OneToMany
-    @JsonIgnore
+    //@JsonIgnore
     private List<Anime> animeList;
 
     @OneToMany
-    @JsonIgnore
+    //@JsonIgnore
     private List<Quote> animeQuotes;
 
 
@@ -49,6 +49,7 @@ public class User {
         isAccountNonLocked = true;
         this.points = 0;
         this.level = NOOB;
+        this.animeList = null;
     }
 
     public User() {
