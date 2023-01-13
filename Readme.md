@@ -12,11 +12,11 @@
  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'             
 ```
 
-### Introduction
+# Introduction
 
 API: Search, store, watch and play to our Trivial... Anime Everywhere.
 
-### Endpoints
+# Endpoints
 
 ## Anime
 
@@ -73,7 +73,6 @@ GET http://localhost:80/users/getAll
 GET http://localhost:80/users/getByUsername
 
 PATCH http://localhost:80/users/updateByUser/{{username}}
-
 
 
 <hr>
