@@ -3,7 +3,10 @@ package com.ironhack.otakuhub.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ironhack.otakuhub.enums.Level;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
+import lombok.experimental.Tolerate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -22,7 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
-    private String username; // username is an email!!
+    private String username;
     private String password;
     private String roles;
     private Boolean isAccountNonLocked;
@@ -31,6 +34,7 @@ public class User {
     @UpdateTimestamp
     private Instant lastUpdatedAt;
 
+    @Setter (AccessLevel.NONE)
     private Integer points;
     private Level level;
 
@@ -71,18 +75,36 @@ public class User {
 
     }
 
+
+
+    public void setPoints(Integer points) {
+        this.points = points;
+        if(this.points>100){
+            this.setLevel(Level.GOLD);
+        } else if (this.points>50) {
+            this.setLevel(Level.SILVER);
+        } else if (this.points>10) {
+            this.setLevel(Level.BRONZE);
+        } else if (this.points <=10) {
+        this.setLevel(Level.NOOB);
+    }
+    }
+
     public void addQuoteToQuoteList(Quote quote) {
         animeQuotes.add(quote);
     }
 
     public void addPoints () {
         this.points++;
-        if(this.points>10){
-            this.setLevel(Level.BRONZE);
+        if(this.points>100){
+            this.setLevel(Level.GOLD);
         } else if (this.points>50) {
             this.setLevel(Level.SILVER);
-        } else if (this.points>100) {
-            this.setLevel(Level.GOLD);
+        } else if (this.points>10) {
+            this.setLevel(Level.BRONZE);
+        } else if (this.points <=10) {
+            this.setLevel(Level.NOOB);
         }
+
     }
 }
