@@ -1,10 +1,13 @@
 package com.ironhack.otakuhub.service;
 
 import com.ironhack.otakuhub.dto.AnimeDTO;
+import com.ironhack.otakuhub.exception.UserNotFoundException;
+import com.ironhack.otakuhub.exception.UsernameNotFoundException;
 import com.ironhack.otakuhub.model.*;
 import com.ironhack.otakuhub.proxy.AnimeProxy;
 import com.ironhack.otakuhub.proxy.TraceMoeProxy;
 import com.ironhack.otakuhub.repository.AnimeSceneImageRepository;
+import com.ironhack.otakuhub.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +22,14 @@ public class AnimeService {
     private final AnimeProxy animeProxy;
     private final TraceMoeProxy traceMoeProxy;
 
+    private final UserRepository userRepository;
+
     public List<Anime> getAnimesByTitle(String keyw) {
         return animeProxy.getAnimesByTitle(keyw);
     }
 
-    public AnimeDTO getAnimeDetails(String id) {
-        return animeProxy.getAnimeDetails(id);
+    public AnimeDTO getAnimeDetails(String animeId) {
+        return animeProxy.getAnimeDetails(animeId);
     }
 
     public List<AnimeDTO> getPopularAnimes (int randomPage) {

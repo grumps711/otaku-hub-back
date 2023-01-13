@@ -1,5 +1,6 @@
 package com.ironhack.otakuhub.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ironhack.otakuhub.config.StringListConverter;
 import com.ironhack.otakuhub.dto.AnimeDTO;
 import jakarta.persistence.*;
@@ -29,6 +30,7 @@ public class Anime {
     @OneToMany
     private List<Episode> episodesList;
     @ManyToOne
+    @JsonIgnore
     private User users;
 
 

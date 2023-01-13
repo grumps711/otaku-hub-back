@@ -29,8 +29,8 @@ public class AnimeController {
 
     @GetMapping ("/anime-details")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public AnimeDTO getAnimeDetails (@RequestParam String id) {
-        return animeService.getAnimeDetails (id);
+    public AnimeDTO getAnimeDetails (@RequestParam String animeId) {
+        return animeService.getAnimeDetails (animeId);
     }
 
     @GetMapping ("/popular")

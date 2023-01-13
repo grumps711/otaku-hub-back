@@ -1,5 +1,6 @@
 package com.ironhack.otakuhub.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ironhack.otakuhub.dto.QuoteDTO;
 import jakarta.persistence.*;
@@ -22,6 +23,7 @@ public class Quote {
     private String quote;
 
     @ManyToOne
+    @JsonIgnore
     private User users;
 
     public static Quote fromQuoteDTO(QuoteDTO quoteDTO) {

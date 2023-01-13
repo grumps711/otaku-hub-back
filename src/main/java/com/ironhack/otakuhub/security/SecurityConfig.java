@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .requestMatchers("/quote/**").permitAll()
                 .requestMatchers("/trivial/**").permitAll()
                 .requestMatchers("/users/**").permitAll()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/users/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

@@ -35,11 +35,11 @@ public class User {
     private Level level;
 
     @OneToMany
-    @JsonIgnore
+    //@JsonIgnore
     private List<Anime> animeList;
 
     @OneToMany
-    @JsonIgnore
+    //@JsonIgnore
     private List<Quote> animeQuotes;
 
 
@@ -50,16 +50,25 @@ public class User {
         isAccountNonLocked = true;
         this.points = 0;
         this.level = NOOB;
-        this.animeList = new ArrayList<Anime>(List.of(new Anime()));
-        this.animeQuotes = new ArrayList<Quote>(List.of(new Quote()));
+        this.animeList = new ArrayList<Anime>();
+        this.animeQuotes = new ArrayList<Quote>();
     }
 
     public User() {
         isAccountNonLocked = true;
     }
 
-    public void addAnimeToAnimeList(Anime anime) {
-        animeList.add(anime);
+    public void addAnimeToAnimeList(Anime animeToAdd) {
+        boolean animeIsInTheList = false;
+        for (Anime anime: animeList) {
+            if (anime.getAnimeTitle().equals(animeToAdd.getAnimeTitle())) {
+                animeIsInTheList = true;
+            }
+        }
+        if (!animeIsInTheList) {
+            animeList.add(animeToAdd);
+        }
+
     }
 
     public void addQuoteToQuoteList(Quote quote) {
