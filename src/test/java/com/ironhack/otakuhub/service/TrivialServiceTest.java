@@ -1,9 +1,7 @@
 package com.ironhack.otakuhub.service;
 
 import com.ironhack.otakuhub.model.AnimeSceneImage;
-import com.ironhack.otakuhub.repository.AnimeRepository;
 import com.ironhack.otakuhub.repository.AnimeSceneImageRepository;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,13 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-class AnimeServiceTest {
+class TrivialServiceTest {
     @Autowired
-    private AnimeService animeService;
+    private TrivialService trivialService;
     @Autowired
     private AnimeSceneImageRepository animeSceneImageRepository;
+
+
     @BeforeEach
     void loadAnimeSceneImages(){
         var animeSceneImages = new ArrayList<AnimeSceneImage>(List.of(
@@ -45,45 +44,22 @@ class AnimeServiceTest {
         animeSceneImageRepository.deleteAll();
     }
 
-    @Test
-    void getAnimesByTitle() {
-        var response = animeService.getAnimesByTitle("naruto");
-        assertTrue(response != null && !response.isEmpty());
-    }
 
     @Test
-    void getAnimeDetails() {
-        var response = animeService.getAnimeDetails("naruto");
+    void getTrivialQuote() {
+        var response = trivialService.getTrivialQuote();
         assertTrue(response != null);
     }
 
     @Test
-    void getPopularAnimes() {
-        var response = animeService.getPopularAnimes(1);
+    void getOtherTwoAnswers() {
+        var response = trivialService.getOtherTwoAnswers("correctAnswer");
         assertTrue(response != null && !response.isEmpty());
     }
 
     @Test
-    void getAnimesByGenre() {
-        var response = animeService.getAnimesByGenre("sports");
-        assertTrue(response != null && !response.isEmpty());
-    }
-
-    @Test
-    void getEpisodeStreamingUrl() {
-        var response = animeService.getEpisodeStreamingUrl("naruto-episode-214");
-        assertTrue(response != null);
-    }
-
-    @Test
-    void getAnimesByScene() {
-        var response = animeService.getAnimesByScene("https://3.bp.blogspot.com/-P20fr6yvg5s/Wu6AgGwY5BI/AAAAAAAAciE/6G0vPmbMDeUybiO6kdAGmolTXSIhOl_zwCLcBGAs/s1600/1295cd2f399a2dae1dcf083261d5d6eae4287ed3_hq.jpg");
-        assertTrue(response.getPossibleAnimes() != null && !response.getPossibleAnimes().isEmpty());
-    }
-
-    @Test
-    void getRandomAnimeSceneImage() {
-        var response = animeService.getRandomAnimeSceneImage();
+    void getTrivialSceneImage() {
+        var response = trivialService.getTrivialSceneImage();
         assertTrue(response != null);
     }
 }
