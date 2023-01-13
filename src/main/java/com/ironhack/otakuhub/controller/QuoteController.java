@@ -28,7 +28,7 @@ public class QuoteController {
     }
 
     @GetMapping("/random/character")
-    Quote getRandomQuoteByAnimeCharacter(@RequestParam(name = "name") String name){
+    Quote getRandomQuoteByAnimeCharacter(@RequestHeader(name = "name") String name){
         return quoteService.getRandomQuoteByAnimeCharacter(name);
     }
 
