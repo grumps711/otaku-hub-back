@@ -101,7 +101,7 @@ public class UserController {
     /**
     comprobación si el usuario está en la base de datos: a partir del username
      */
-    @GetMapping ("public/checkuser/{username}")
+    @GetMapping ("checkuser/{username}")
     public Boolean userExist (String username) {
         return userService.userExist (username);
     }
