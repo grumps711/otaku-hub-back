@@ -47,7 +47,7 @@ public class UserController {
     /**
     Borrar usuario: accesible por usuario y admin
      */
-    @DeleteMapping("public/delete/{username}")
+    @DeleteMapping("delete/{username}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public List<User> deleteUser (@PathVariable ("username") String username) {
         return userService.deleteUserByUsername(username);
@@ -74,7 +74,7 @@ public class UserController {
     updateUserByUser: solo actualiza el username y el password
     endpoint accesible por el usuario
      */
-    @PatchMapping("public/updateByUser/{username}")
+    @PatchMapping("updateByUser/{username}")
     public User updateUserByUser (@PathVariable String username,
                                    @RequestParam Optional<String> username1,
                                    @RequestParam Optional <String> password
@@ -87,13 +87,13 @@ public class UserController {
      * @param username, animeDTO
      * @return Anime
      */
-    @PatchMapping("public/addanime/{username}")
+    @PatchMapping("addanime/{username}")
     public User addAnime (@PathVariable (name = "username") String username,
                            @RequestParam (name = "animeId")String animeId){
         return userService.addAnimeToUser(username, animeId);
     }
 
-    @PatchMapping("public/addpoints/{username}")
+    @PatchMapping("addpoints/{username}")
     public User addPoints (@PathVariable String username){
         return userService.addPoints(username);
     }

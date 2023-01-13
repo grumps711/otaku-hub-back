@@ -52,8 +52,8 @@ public class TrivialService {
         //Me aseguro que no sean el mismo que el de quoteObject
         for (int i = 0; i < animeList.size(); i++) {
             if ((!animeList.get(i).getAnimeId().equals(correctAnswer) && (!animeList.get(i+1).getAnimeId().equals(correctAnswer)))) {
-                wrongAnswer1 = animeList.get(i).getAnimeId();
-                wrongAnswer2 = animeList.get(i+1).getAnimeId();
+                wrongAnswer1 = animeList.get(i).getAnimeTitle();
+                wrongAnswer2 = animeList.get(i+1).getAnimeTitle();
                 break;
             }
 
