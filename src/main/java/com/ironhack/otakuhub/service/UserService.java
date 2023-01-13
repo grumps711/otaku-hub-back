@@ -45,9 +45,11 @@ public class UserService {
 
     }
 
-    public List<User> deleteUserByUsername(String username) {
-        findUserByUsername (username);
-        return userRepository.deleteUserByUsername(username);
+    public void deleteUserByUsername(String username) {
+
+        var user = findUserByUsername (username);
+        userRepository.delete(user);
+        //return userRepository.deleteUserByUsername(username);
     }
 
     public User updateUserByAdmin ( String username, //as id
