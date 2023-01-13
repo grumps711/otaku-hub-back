@@ -77,5 +77,12 @@ public class User {
 
     public void addPoints () {
         this.points++;
+        if(this.points>10){
+            this.setLevel(Level.BRONZE);
+        } else if (this.points>50) {
+            this.setLevel(Level.SILVER);
+        } else if (this.points>100) {
+            this.setLevel(Level.GOLD);
+        }
     }
 }
