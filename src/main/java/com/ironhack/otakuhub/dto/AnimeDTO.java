@@ -47,7 +47,7 @@ public class AnimeDTO {
         AnimeDTO.setSynopsis(anime.getSynopsis());
         AnimeDTO.setTotalEpisodes(anime.getTotalEpisodes());
         AnimeDTO.setEpisodesList(anime.getEpisodesList());
-        AnimeDTO.setUsers(anime.getUsers());
+        //AnimeDTO.setUsers(anime.getUsers());
         return AnimeDTO;
     }
 }
