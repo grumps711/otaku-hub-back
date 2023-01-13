@@ -1,3 +1,112 @@
+```
+ .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.   
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |  
+| |     ____     | || |  _________   | || |      __      | || |  ___  ____   | || | _____  _____ | || |  ____  ____  | || | _____  _____ | || |   ______     | |  
+| |   .'    `.   | || | |  _   _  |  | || |     /  \     | || | |_  ||_  _|  | || ||_   _||_   _|| || | |_   ||   _| | || ||_   _||_   _|| || |  |_   _ \    | |  
+| |  /  .--.  \  | || | |_/ | | \_|  | || |    / /\ \    | || |   | |_/ /    | || |  | |    | |  | || |   | |__| |   | || |  | |    | |  | || |    | |_) |   | |  
+| |  | |    | |  | || |     | |      | || |   / ____ \   | || |   |  __'.    | || |  | '    ' |  | || |   |  __  |   | || |  | '    ' |  | || |    |  __'.   | |  
+| |  \  `--'  /  | || |    _| |_     | || | _/ /    \ \_ | || |  _| |  \ \_  | || |   \ `--' /   | || |  _| |  | |_  | || |   \ `--' /   | || |   _| |__) |  | |  
+| |   `.____.'   | || |   |_____|    | || ||____|  |____|| || | |____||____| | || |    `.__.'    | || | |____||____| | || |    `.__.'    | || |  |_______/   | |  
+| |              | || |              | || |              | || |              | || |              | || |              | || |              | || |              | |  
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |  
+ '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'             
+```
+
+## Introduction
+
+API: Search, store, watch and play to our Trivial... Anime Everywhere.
+
+
+## Endpoints
+
+#Anime
+GET http://localhost:80/anime/anime-details
+
+GET http://localhost:80/anime/popular
+
+GET http://localhost:80/anime/sceneImage
+
+GET http://localhost:80/anime/search
+
+GET http://localhost:80/anime/search/byGenre
+
+GET http://localhost:80/anime/search/byScene
+
+GET http://localhost:80/anime/watch
+
+#Trivial
+GET http://localhost:80/trivial/quote
+
+GET http://localhost:80/trivial/sceneImage
+
+#Quote
+GET http://localhost:80/quote/quotes
+
+GET http://localhost:80/quote/quotes/anime
+
+GET http://localhost:80/quote/quotes/character
+
+GET http://localhost:80/quote/random
+
+GET http://localhost:80/quote/random/anime
+
+GET http://localhost:80/quote/random/character
+
+#Users
+PATCH http://localhost:80/users/addanime/{{username}}
+
+PATCH http://localhost:80/users/addpoints/{{username}}
+
+PATCH http://localhost:80/users/admin/updateUserByAdmin/{{username}}
+
+GET http://localhost:80/users/checkuser/{{username}}
+
+POST http://localhost:80/users/create
+
+DELETE http://localhost:80/users/delete/{{username}}
+
+GET http://localhost:80/users/getAll
+
+GET http://localhost:80/users/getByUsername
+
+PATCH http://localhost:80/users/updateByUser/{{username}}
+
+
+
+<hr>
+
+_Developed by:_
+
+![imagen](https://user-images.githubusercontent.com/83793367/212431897-31723c4c-6160-464c-a01e-aeefc93d6b93.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Notas 9 Enero
 
 * Para comprobar si el username está en la base de datos, usaremos Supabase (base de datos de front).
