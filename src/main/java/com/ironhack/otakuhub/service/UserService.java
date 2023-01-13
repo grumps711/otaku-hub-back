@@ -120,7 +120,7 @@ public class UserService {
         var animeToAdd = new Anime ();
 
         //Traducción de animeDTO --> Anime
-        animeToAdd.setAnimeId("");
+        animeToAdd.setAnimeId(animeDTO.getAnimeTitle());
         animeToAdd.setAnimeTitle(animeDTO.getAnimeTitle());
         animeToAdd.setAnimeImg(animeDTO.getAnimeImg());
         animeToAdd.setStatus(animeDTO.getStatus());
@@ -129,17 +129,28 @@ public class UserService {
         animeToAdd.setGenres(animeDTO.getGenres());
         //animeToAdd.setSynopsis(animeDTO.getSynopsis());
         animeToAdd.setTotalEpisodes(animeDTO.getTotalEpisodes());
-        animeToAdd.setEpisodesList(animeDTO.getEpisodesList());
+        //animeToAdd.setEpisodesList(animeDTO.getEpisodesList());
         animeToAdd.setUsers(animeDTO.getUsers());
 
-        for (Episode episode:animeToAdd.getEpisodesList()){
-            episodeRepository.save (episode);
-        }
-        animeToAdd = animeRepository.save (animeToAdd);
+        boolean animeIsOnTheList = false;
 
-        if(!animeToAdd.getAnimeTitle().isEmpty()){
+        //Compruebo si el anime está en la lista de favoritos del usuario
+        for ( Anime anime:userToUpdate.getAnimeList()) {
+            if (anime.getAnimeTitle().equals(animeToAdd.getAnimeTitle())) {
+                animeIsOnTheList = true;
+            }
+        }
+
+        //Si el anime no está en la lista, se añade a la lista del usuario
+        if (!animeIsOnTheList) {
+           // episodeRepository.saveAll(animeToAdd.getEpisodesList());
+            animeToAdd = animeRepository.save (animeToAdd);
+
+           if(!animeToAdd.getAnimeTitle().isEmpty()){
             userToUpdate.addAnimeToAnimeList(animeToAdd);
-        };
+            };
+        }
+
         return userRepository.save(userToUpdate);
     }
 }

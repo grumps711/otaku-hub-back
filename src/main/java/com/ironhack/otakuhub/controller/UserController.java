@@ -47,7 +47,7 @@ public class UserController {
     }
 
     /**
-    updateUSerByAdmin puede modificar todos los campos del objeto usuario
+    updateUserByAdmin puede modificar todos los campos del objeto usuario
     Este método solo es accesible por el administrador
      */
     @PatchMapping("admin/updateUserByAdmin/{username}")
