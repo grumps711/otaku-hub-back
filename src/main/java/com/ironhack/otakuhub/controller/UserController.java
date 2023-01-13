@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/users")
@@ -26,12 +27,18 @@ public class UserController {
 /**
 * Listar todos los usuarios de la base de datos
 */
-    @GetMapping
+    @GetMapping("/getAll")
     public List<User> getAllUsers () {
         return userService.findAll();
     }
 
-    @PostMapping("public/create")
+    @GetMapping("/getByUsername")
+    public User getUserByUsername(@RequestParam(name = "username") String username){
+        return userService.getUser(username);
+    }
+
+
+    @PostMapping("/create")
     @ResponseStatus (HttpStatus.CREATED)
     public User createUser (@RequestBody UserDTO userDTO) {
         return userService.createUser (userDTO);

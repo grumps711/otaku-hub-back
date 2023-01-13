@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Random;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/anime") //TODO eliminar public una vez que configuremos la security

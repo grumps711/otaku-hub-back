@@ -76,7 +76,7 @@ public class DataLoader {
                     new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/c/ca/Hinata_VS_Kageyama.PNG/revision/latest/scale-to-width-down/1200?cb=20140407073702"),
                     new AnimeSceneImage("http://4.bp.blogspot.com/-oK8HepDmGVg/U3bQ50ocYiI/AAAAAAAAAEA/Thk6zF72A8E/s1600/vlcsnap-2014-05-16-22h42m43s186.png"),
                     new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/S4E14.png/revision/latest?cb=20200928112808"),
-                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/b/bc/Direct_Sunlight.png/revision/latest?cb=20151011014107"),
 
                 //run with the wind
                     new AnimeSceneImage(""),
@@ -86,32 +86,32 @@ public class DataLoader {
                     new AnimeSceneImage(""),
 
                 //kaiji
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("https://img1.ak.crunchyroll.com/i/spire2/2ce6fc2b9becf670513d20a59562a6ee1662898642_main.jpg"),
+                    new AnimeSceneImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeTjiZRipU9cgp3rUKM_kUtsU9G9n4g2cuRA&usqp=CAU"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/ThDkgXf3r4g/maxresdefault.jpg"),
+                    new AnimeSceneImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDFogY88A7MkwU2c-hzZgBV70clBVf93dRRw&usqp=CAU"),
+                    new AnimeSceneImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer2jONjY7UxKuRRsWIqeXYAruUhcAm-eXlQ&usqp=CAU"),
 
                 //inazuma eleven
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dailymotion.com%2Fvideo%2Fx7ypnhr&psig=AOvVaw2DuGqpKKMMyo0nwK5F4HPg&ust=1673552212642000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNim-_uhwPwCFQAAAAAdAAAAABAD"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/A65n3k33IEk/hqdefault.jpg"),
+                    new AnimeSceneImage("https://static.tvtropes.org/pmwiki/pub/images/bear_hugs.jpg"),
+                    new AnimeSceneImage("https://cdn2.rtva.interactvty.com/content_cards/7b5c890618eb4cd2ad5d57e53a8afa42.jpg"),
+                    new AnimeSceneImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-xhsP3ZTHAollhV58GXT5n3P3267nwLRASA&usqp=CAU"),
 
                 //aku no hana
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("http://farm9.staticflickr.com/8264/8690022356_45cff05bed.jpg"),
+                    new AnimeSceneImage("http://blog.draggle.org/wp-content/uploads/2013/06/aku_no_hana_13_2.jpg"),
+                    new AnimeSceneImage("http://www.bateszi.me/wp-content/uploads/2013/06/vlcsnap-2013-05-20-20h53m54s234-500x281.png"),
+                    new AnimeSceneImage("https://www.themoviedb.org/t/p/w780/l2FjEsiOTEvTZcvW8pDs07X5Q2x.jpg"),
+                    new AnimeSceneImage("https://bateszi.me/wp-content/uploads/2013/06/vlcsnap-2013-06-02-13h02m50s188.png"),
 
                 //flcl
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage("")
+                    new AnimeSceneImage("https://i.cdn.turner.com/adultswim/big/img/2018/08/06/flclaltSearch.jpg"),
+                    new AnimeSceneImage("https://cdn.vox-cdn.com/thumbor/KK-OXvweM2Y5zzcTVve0RUE6umQ=/0x53:1690x898/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/11651925/haruka_.jpg"),
+                    new AnimeSceneImage("https://i.pinimg.com/originals/63/a5/69/63a5693992b0226916e0b5a26511115a.jpg"),
+                    new AnimeSceneImage("https://i.cdn.turner.com/adultswim/big/image-upload/thumbnails/thumb-2_image-15381496590678.jpg"),
+                    new AnimeSceneImage("https://m.media-amazon.com/images/M/MV5BYzA2OWYwYzktMDM0ZC00YWQ1LWE3MTUtN2Y3NTY0YmM2ODk5XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg")
 
 
                     ));

@@ -28,8 +28,11 @@ public class SecurityConfig {
         return http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET,"/public").permitAll()
-                .requestMatchers(HttpMethod.GET, "/admin").hasRole("ROLE_ADMIN")
+                .requestMatchers("/anime/**").permitAll()
+                .requestMatchers("/quote/**").permitAll()
+                .requestMatchers("/trivial/**").permitAll()
+                .requestMatchers("/users/**").permitAll()
+                .requestMatchers("/users/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

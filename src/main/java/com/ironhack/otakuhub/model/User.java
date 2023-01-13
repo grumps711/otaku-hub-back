@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.ironhack.otakuhub.enums.Level.NOOB;
@@ -21,7 +22,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
-    private String username;
+    private String username; // username is an email!!
     private String password;
     private String roles;
     private Boolean isAccountNonLocked;
@@ -49,7 +50,8 @@ public class User {
         isAccountNonLocked = true;
         this.points = 0;
         this.level = NOOB;
-        this.animeList = null;
+        this.animeList = new ArrayList<Anime>();
+        this.animeQuotes = new ArrayList<Quote>();
     }
 
     public User() {

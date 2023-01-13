@@ -112,6 +112,7 @@ public class UserService {
             return false;
         }
     }
+
     public User addAnimeToUser(String username, String animeId) {
         var userToUpdate = findUserByUsername(username);
         var animeDTO = new AnimeDTO ();
@@ -152,5 +153,10 @@ public class UserService {
         }
 
         return userRepository.save(userToUpdate);
+        }
+
+
+    public User getUser(String username) {
+        return userRepository.findByUsername(username).get();
     }
 }
