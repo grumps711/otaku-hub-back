@@ -12,14 +12,14 @@
  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'             
 ```
 
-## Introduction
+### Introduction
 
 API: Search, store, watch and play to our Trivial... Anime Everywhere.
 
+### Endpoints
 
-## Endpoints
+## Anime
 
-#Anime
 GET http://localhost:80/anime/anime-details
 
 GET http://localhost:80/anime/popular
@@ -34,12 +34,14 @@ GET http://localhost:80/anime/search/byScene
 
 GET http://localhost:80/anime/watch
 
-#Trivial
+## Trivial
+
 GET http://localhost:80/trivial/quote
 
 GET http://localhost:80/trivial/sceneImage
 
-#Quote
+## Quote
+
 GET http://localhost:80/quote/quotes
 
 GET http://localhost:80/quote/quotes/anime
@@ -52,7 +54,8 @@ GET http://localhost:80/quote/random/anime
 
 GET http://localhost:80/quote/random/character
 
-#Users
+## Users
+
 PATCH http://localhost:80/users/addanime/{{username}}
 
 PATCH http://localhost:80/users/addpoints/{{username}}
