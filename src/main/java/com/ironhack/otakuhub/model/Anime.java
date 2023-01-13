@@ -29,9 +29,9 @@ public class Anime {
     private Integer totalEpisodes;
     @OneToMany
     private List<Episode> episodesList;
-    @ManyToOne
+    @ManyToMany
     @JsonIgnore
-    private User users;
+    private List <User> users;
 
 
     public static Anime fromAnimeDTO(AnimeDTO animeDTO){
@@ -46,7 +46,7 @@ public class Anime {
         Anime.setSynopsis(animeDTO.getSynopsis());
         Anime.setTotalEpisodes(animeDTO.getTotalEpisodes());
         Anime.setEpisodesList(animeDTO.getEpisodesList());
-        Anime.setUsers(animeDTO.getUsers());
+        //Anime.setUsers(animeDTO.getUsers());
         return Anime;
     }
 

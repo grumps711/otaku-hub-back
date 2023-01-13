@@ -38,7 +38,7 @@ public class User {
     private Integer points;
     private Level level;
 
-    @OneToMany
+    @ManyToMany
     //@JsonIgnore
     private List<Anime> animeList;
 

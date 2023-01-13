@@ -133,7 +133,7 @@ public class UserService {
         //animeToAdd.setSynopsis(animeDTO.getSynopsis());
         animeToAdd.setTotalEpisodes(animeDTO.getTotalEpisodes());
         //animeToAdd.setEpisodesList(animeDTO.getEpisodesList());
-        animeToAdd.setUsers(animeDTO.getUsers());
+        //animeToAdd.setUsers(animeDTO.getUsers());
 
         boolean animeIsOnTheList = false;
 
@@ -147,13 +147,14 @@ public class UserService {
         //Si el anime no está en la lista, se añade a la lista del usuario
         if (!animeIsOnTheList) {
            // episodeRepository.saveAll(animeToAdd.getEpisodesList());
-            animeToAdd = animeRepository.save (animeToAdd);
 
+            if  (!animeRepository.existsById(animeToAdd.getAnimeId())) {
+                animeToAdd = animeRepository.save (animeToAdd);
+            }
            if(!animeToAdd.getAnimeTitle().isEmpty()){
             userToUpdate.addAnimeToAnimeList(animeToAdd);
             };
         }
-
         return userRepository.save(userToUpdate);
         }
 
