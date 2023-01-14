@@ -75,12 +75,18 @@ A free restful API serving quality anime quotes (https://animechan.vercel.app/)
 ### TraceMoe API,
 Anime Scene Seach Engine that can trace back the scene where an anime screenshots is taken from (https://soruly.github.io/trace.moe-api/#/)
 
-# API Demo (front-end vuejs)
- Comming soon.. ^^
+# Public API Demo (frontend vuejs)
+Ngrok betrayed us... :sob:
+
+But comming soon!! :wink:
 
 <hr>
 
 _Developed by:_
+
+* Pablo Martínez (Backend)
+* Eugeni Puigdomènech (Frontend)
+* Andrés Álvarez (Backend and Frontend)
 
 ![imagen](https://user-images.githubusercontent.com/83793367/212431897-31723c4c-6160-464c-a01e-aeefc93d6b93.png)
 
