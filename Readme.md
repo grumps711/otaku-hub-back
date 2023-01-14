@@ -2,8 +2,8 @@
 <img src="docs/text-1673644554952.png" alt="otaku-hub" width="1400"/>        
 <img src="docs/manga-tekeningen.jpg" alt="otaku-hub" width="1400"/>
 
+<div align="center"><h3>Search, store, watch and play to our Trivial... Anime Everywhere.</h3></div>
 
-<p align="center" font-size= 100 >API: Search, store, watch and play to our Trivial... Anime Everywhere.</p>
 
 # Endpoints
 
