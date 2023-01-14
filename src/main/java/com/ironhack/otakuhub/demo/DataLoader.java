@@ -118,8 +118,13 @@ public class DataLoader {
                     new AnimeSceneImage("https://cdn.vox-cdn.com/thumbor/KK-OXvweM2Y5zzcTVve0RUE6umQ=/0x53:1690x898/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/11651925/haruka_.jpg"),
                     new AnimeSceneImage("https://i.pinimg.com/originals/63/a5/69/63a5693992b0226916e0b5a26511115a.jpg"),
                     new AnimeSceneImage("https://i.cdn.turner.com/adultswim/big/image-upload/thumbnails/thumb-2_image-15381496590678.jpg"),
-                    new AnimeSceneImage("https://m.media-amazon.com/images/M/MV5BYzA2OWYwYzktMDM0ZC00YWQ1LWE3MTUtN2Y3NTY0YmM2ODk5XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg")
-
+                    new AnimeSceneImage("https://m.media-amazon.com/images/M/MV5BYzA2OWYwYzktMDM0ZC00YWQ1LWE3MTUtN2Y3NTY0YmM2ODk5XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg"),
+//               hajime no ippo
+                    new AnimeSceneImage("https://honeysanime.com/wp-content/uploads/2016/07/6.-hajime-no-ippo-Capture-Season-3-Ep-9-20160731203654-500x280.png"),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage(""),
+                    new AnimeSceneImage("")
 
                     ));
             animeSceneImageRepository.saveAll(animeSceneImages);
