@@ -2,8 +2,11 @@
 <img src="docs/text-1673644554952.png" alt="otaku-hub" width="1400"/>        
 <img src="docs/manga-tekeningen.jpg" alt="otaku-hub" width="1400"/>
 
-<div align="center"><h3>Search, store, watch and play to our Trivial... Anime Everywhere.</h3></div>
+<div align="center"><h1>SEARCH! STORE! WATCH! and PLAY to our Trivial! Anime Everywhere.</h1></div>
 
+<div align="center"><h2>SEARCH! STORE! WATCH! and PLAY to our Trivial! Anime Everywhere.</h2></div>
+
+<hr>
 
 # Endpoints
 
