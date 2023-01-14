@@ -35,6 +35,12 @@ public class AnimeDTO {
     private User users;
 
 
+    //constructor para el test addAnimeList
+    public AnimeDTO(String animeId, String animeTitle) {
+        this.animeId = animeId;
+        this.animeTitle = animeTitle;
+    }
+
     public static AnimeDTO fromAnime(Anime anime){
         var AnimeDTO = new AnimeDTO();
         AnimeDTO.setAnimeId(anime.getAnimeId());
