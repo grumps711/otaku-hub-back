@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Random;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/anime") //TODO eliminar public una vez que configuremos la security
@@ -28,8 +29,8 @@ public class AnimeController {
 
     @GetMapping ("/anime-details")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public AnimeDTO getAnimeDetails (@RequestParam String id) {
-        return animeService.getAnimeDetails (id);
+    public AnimeDTO getAnimeDetails (@RequestParam String animeId) {
+        return animeService.getAnimeDetails (animeId);
     }
 
     @GetMapping ("/popular")
@@ -58,15 +59,8 @@ public class AnimeController {
 
     @GetMapping ("/search/byScene")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public AnimesByScene getAnimesByScene (@RequestParam String url) {
-        return animeService.getAnimesByScene (url);
+    public AnimesByScene getAnimesByScene (@RequestHeader(name = "x-trace-key") String apikey,
+                                           @RequestParam String url) {
+        return animeService.getAnimesByScene (apikey, url);
     }
-
-
-
-    private String getRandomPage(){
-        return Integer.toString(new Random().nextInt(500-1) + 1);
-    }
-
-
 }

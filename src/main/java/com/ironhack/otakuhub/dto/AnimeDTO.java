@@ -35,6 +35,12 @@ public class AnimeDTO {
     private User users;
 
 
+    //constructor para el test addAnimeList
+    public AnimeDTO(String animeId, String animeTitle) {
+        this.animeId = animeId;
+        this.animeTitle = animeTitle;
+    }
+
     public static AnimeDTO fromAnime(Anime anime){
         var AnimeDTO = new AnimeDTO();
         AnimeDTO.setAnimeId(anime.getAnimeId());
@@ -47,7 +53,7 @@ public class AnimeDTO {
         AnimeDTO.setSynopsis(anime.getSynopsis());
         AnimeDTO.setTotalEpisodes(anime.getTotalEpisodes());
         AnimeDTO.setEpisodesList(anime.getEpisodesList());
-        AnimeDTO.setUsers(anime.getUsers());
+        //AnimeDTO.setUsers(anime.getUsers());
         return AnimeDTO;
     }
 }

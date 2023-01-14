@@ -1,3 +1,127 @@
+```
+![text-1673644554952](https://user-images.githubusercontent.com/83793367/212465114-6a8d1f32-410c-4d35-bbd3-735ff91d14d9.png
+        
+```
+
+# Introduction
+
+API: Search, store, watch and play to our Trivial... Anime Everywhere.
+
+# Endpoints
+
+## Anime
+
+GET http://localhost:80/anime/anime-details
+
+GET http://localhost:80/anime/popular
+
+GET http://localhost:80/anime/sceneImage
+
+GET http://localhost:80/anime/search
+
+GET http://localhost:80/anime/search/byGenre
+
+GET http://localhost:80/anime/search/byScene
+
+GET http://localhost:80/anime/watch
+
+## Trivial
+
+GET http://localhost:80/trivial/quote
+
+GET http://localhost:80/trivial/sceneImage
+
+## Quote
+
+GET http://localhost:80/quote/quotes
+
+GET http://localhost:80/quote/quotes/anime
+
+GET http://localhost:80/quote/quotes/character
+
+GET http://localhost:80/quote/random
+
+GET http://localhost:80/quote/random/anime
+
+GET http://localhost:80/quote/random/character
+
+## Users
+
+PATCH http://localhost:80/users/addanime/{{username}}
+
+PATCH http://localhost:80/users/addpoints/{{username}}
+
+PATCH http://localhost:80/users/admin/updateUserByAdmin/{{username}}
+
+GET http://localhost:80/users/checkuser/{{username}}
+
+POST http://localhost:80/users/create
+
+DELETE http://localhost:80/users/delete/{{username}}
+
+GET http://localhost:80/users/getAll
+
+GET http://localhost:80/users/getByUsername
+
+PATCH http://localhost:80/users/updateByUser/{{username}}
+
+
+<hr>
+
+_Developed by:_
+
+![imagen](https://user-images.githubusercontent.com/83793367/212431897-31723c4c-6160-464c-a01e-aeefc93d6b93.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Notas 9 Enero
+
+* Para comprobar si el username está en la base de datos, usaremos Supabase (base de datos de front).
+* Demo:
+    * empezar sin usuarios en las basede datos de supabase y back end
+    * desde la pagina de login, crearemos un usuario en la página de Sign up
+    * Una vez creado se crea el usuario en la base de datos de Supabase y en el 
+    
+* Security
+  * crear un metodo "create user": en la securityConfig hay que indicar que el endoPoint no requiere
+  * SecurityConfig: linea 31-32
+    * requestMatchers("/public/**").permitAll() --> las rutas con "public" no será necesario autentificación
+    * .requestMatchers(HttpMethod.GET, "/top-secret/ultra").hasRole("ADMIN") --> para acceder a los endpoints con las rutas con "/top-secrete/ultra" es necesario tener el role "ADMIN
+    ![image](https://user-images.githubusercontent.com/115550667/211384308-32edc338-9d27-48ac-97f6-3440371f1c58.png)
+
+
+* endPonit createUser --> pendiente de defnir como recibir en el endpoint: como objeto o como Username + password
+
+* limite de busqueda de imagenes en https://trace.moe. --> probar:
+  * si usando Postman se llega al limite
+
+---
 # Notas 8 Enero.  
 
 * Crear una página para login: username & password

@@ -3,11 +3,15 @@ package com.ironhack.otakuhub.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ironhack.otakuhub.enums.Level;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
+import lombok.experimental.Tolerate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.ironhack.otakuhub.enums.Level.NOOB;
@@ -30,15 +34,16 @@ public class User {
     @UpdateTimestamp
     private Instant lastUpdatedAt;
 
+    @Setter (AccessLevel.NONE)
     private Integer points;
     private Level level;
 
-    @OneToMany
-    @JsonIgnore
+    @ManyToMany
+    //@JsonIgnore
     private List<Anime> animeList;
 
     @OneToMany
-    @JsonIgnore
+    //@JsonIgnore
     private List<Quote> animeQuotes;
 
 
@@ -49,9 +54,57 @@ public class User {
         isAccountNonLocked = true;
         this.points = 0;
         this.level = NOOB;
+        this.animeList = new ArrayList<Anime>();
+        this.animeQuotes = new ArrayList<Quote>();
     }
 
     public User() {
         isAccountNonLocked = true;
+    }
+
+    public void addAnimeToAnimeList(Anime animeToAdd) {
+        boolean animeIsInTheList = false;
+        for (Anime anime: animeList) {
+            if (anime.getAnimeTitle().equals(animeToAdd.getAnimeTitle())) {
+                animeIsInTheList = true;
+            }
+        }
+        if (!animeIsInTheList) {
+            animeList.add(animeToAdd);
+        }
+
+    }
+
+
+
+    public void setPoints(Integer points) {
+        this.points = points;
+        if(this.points>100){
+            this.setLevel(Level.GOLD);
+        } else if (this.points>50) {
+            this.setLevel(Level.SILVER);
+        } else if (this.points>10) {
+            this.setLevel(Level.BRONZE);
+        } else if (this.points <=10) {
+        this.setLevel(Level.NOOB);
+    }
+    }
+
+    public void addQuoteToQuoteList(Quote quote) {
+        animeQuotes.add(quote);
+    }
+
+    public void addPoints () {
+        this.points++;
+        if(this.points>100){
+            this.setLevel(Level.GOLD);
+        } else if (this.points>50) {
+            this.setLevel(Level.SILVER);
+        } else if (this.points>10) {
+            this.setLevel(Level.BRONZE);
+        } else if (this.points <=10) {
+            this.setLevel(Level.NOOB);
+        }
+
     }
 }

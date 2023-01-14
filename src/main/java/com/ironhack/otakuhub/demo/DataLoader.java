@@ -35,10 +35,17 @@ public class DataLoader {
             userRepository.save(user1);
             log.info("User " + user1.getUsername() + " was created successfully");
 
-            User user2 = new User("admin", passwordEncoder.encode("admin"), "ROLE_USER, ROLE_ADMIN");
+            User user2 = new User("admin", passwordEncoder.encode("admin"), "ROLE_USER,ROLE_ADMIN");
             userRepository.save(user2);
             log.info("User " + user2.getUsername() + " was created successfully");
             log.info("Finished demo user loading.");
+
+           User user3 = new User("admin2", passwordEncoder.encode("admin2"), "ROLE_USER,ROLE_ADMIN");
+           userRepository.save(user3);
+           log.info("User " + user3.getUsername() + " was created successfully");
+           log.info("Finished demo user loading.");
+
+
         } catch (Exception e){
            System.out.println("Users exist already in the database");
            System.out.println(e.getMessage());
@@ -50,7 +57,7 @@ public class DataLoader {
     public void loadAnimeSceneImages(){
         try{
             var animeSceneImages = new ArrayList<AnimeSceneImage>(List.of(
-//                ONEPIECE urls
+ //               ONEPIECE urls
                     new AnimeSceneImage("https://i.ytimg.com/vi/ijxqbG4_IDs/maxresdefault.jpg"),
                     new AnimeSceneImage("https://qph.cf2.quoracdn.net/main-qimg-9fa6865e15516fe240dfb758b49769ed-lq"),
                     new AnimeSceneImage("https://imgix.ranker.com/list_img_v2/14221/3194221/original/3194221"),
@@ -120,6 +127,7 @@ public class DataLoader {
                     new AnimeSceneImage("https://i.ytimg.com/vi/28UIP1Cgjs4/hqdefault.jpg"),
                     new AnimeSceneImage("https://preview.redd.it/9hbc1te32mp01.png?auto=webp&s=4f424ec1a7a1c5685dcb93421b269f577bcdb49f"),
                     new AnimeSceneImage("https://i.ytimg.com/vi/KJv7w_zz2wU/hqdefault.jpg"),
+                    new AnimeSceneImage("https://honeysanime.com/wp-content/uploads/2016/07/6.-hajime-no-ippo-Capture-Season-3-Ep-9-20160731203654-500x280.png"),
 
                 //hero academia
                     new AnimeSceneImage("https://animecorner.me/wp-content/uploads/2021/07/My-Hero-Academia-Preview-Image-Episode-105.jpg"),
@@ -142,6 +150,7 @@ public class DataLoader {
                     new AnimeSceneImage ("https://static.wikia.nocookie.net/evangelion/images/7/79/Episode_3-_A_Transfer.png/revision/latest?cb=20210717171033"),
                     new AnimeSceneImage ("https://static.wikia.nocookie.net/evangelion/images/9/91/Episode_15.png/revision/latest?cb=20121216053159"),
                     new AnimeSceneImage ("https://filmschoolrejects.com/wp-content/uploads/2019/03/Episode-26_Favorite-Shot-1.jpg")
+                    
                     ));
             Collections.shuffle(animeSceneImages);
             animeSceneImageRepository.saveAll(animeSceneImages);
@@ -149,8 +158,8 @@ public class DataLoader {
             System.out.println("Users exist already in the database");
             System.out.println(e.getMessage());
             System.out.println(e.getCause());
-
         }
+
 
     }
 
