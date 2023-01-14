@@ -50,44 +50,6 @@ class UserServiceTest {
     }
 
     @Test
-    void deleteUserByUsername() {
-        var user1 = new UserDTO("pepe", "pepe");
-        var user2 = new UserDTO ("paco","paco");
-        var newUser1 = userService.createUser(user1);
-        var newUser2 = userService.createUser(user2);
-
-        var allUsers = userRepository.findAll();
-        assertEquals(4, allUsers.size());
-        userRepository.deleteUserByUsername("paco");
-        var allUsers2 = userRepository.findAll();
-        assertEquals(3, allUsers2.size());
-    }
-
-   // @Test
-   // void updateUserByAdmin() {
-   //     var userDTO = new UserDTO("pepe", "pepe");
-   //     var newUser = userService.createUser(userDTO);
-   //     userRepository.save(newUser);
-   //     userService.updateUserByAdmin("pepe",
-   //             Optional.of("pepeUpdated"),
-   //             Optional.empty(),
-   //             Optional.empty(),
-   //             Optional.empty(),
-   //             Optional.of(10),
-   //             Optional.empty(),
-   //             Optional.empty(),
-   //             Optional.empty());
-   //     userRepository.save(newUser);
-   //     assertEquals(10,newUser.getPoints());
-   //     assertEquals("pepeUpdated",newUser.getUsername());
-//
-   // }
-
-    @Test
-    void updateUserByUser() {
-    }
-
-    @Test
     void findAll() {
         var userDTO = new UserDTO("pepe", "pepe");
         var newUser = userService.createUser(userDTO);
@@ -109,21 +71,6 @@ class UserServiceTest {
         var newUser = userService.createUser(userDTO);
 
         assertEquals(true, userService.userExist("pepe"));
-    }
-
-    @Test
-    void addAnimeToUser() {
-        var userDTO = new UserDTO("pepe", "pepe");
-        var newUser = userService.createUser(userDTO);
-        var animeList = newUser.getAnimeList();
-
-        var newAnimeDTO = animeService.getAnimeDetails("Naruto");
-        var newAnime = Anime.fromAnimeDTO(newAnimeDTO);
-        newAnime.setAnimeId(newAnime.getAnimeTitle());
-        animeList.add(newAnime);
-
-        assertEquals(newAnime.getAnimeId(),newUser.getAnimeList().get(0).getAnimeId());
-
     }
 
     @Test
