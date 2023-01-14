@@ -72,11 +72,11 @@ public class DataLoader {
                     new AnimeSceneImage("https://i.ytimg.com/vi/oZJ-DTduQsA/maxresdefault.jpg"),
 
                 //haikyuu
-                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/BokutoKuroo1.png/revision/latest?cb=20151126062054"),
-                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/c/ca/Hinata_VS_Kageyama.PNG/revision/latest/scale-to-width-down/1200?cb=20140407073702"),
-                    new AnimeSceneImage("http://4.bp.blogspot.com/-oK8HepDmGVg/U3bQ50ocYiI/AAAAAAAAAEA/Thk6zF72A8E/s1600/vlcsnap-2014-05-16-22h42m43s186.png"),
-                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/S4E14.png/revision/latest?cb=20200928112808"),
-                    new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/b/bc/Direct_Sunlight.png/revision/latest?cb=20151011014107"),
+                    //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/BokutoKuroo1.png/revision/latest?cb=20151126062054"),
+                    //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/c/ca/Hinata_VS_Kageyama.PNG/revision/latest/scale-to-width-down/1200?cb=20140407073702"),
+                    //new AnimeSceneImage("http://4.bp.blogspot.com/-oK8HepDmGVg/U3bQ50ocYiI/AAAAAAAAAEA/Thk6zF72A8E/s1600/vlcsnap-2014-05-16-22h42m43s186.png"),
+                    //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/S4E14.png/revision/latest?cb=20200928112808"),
+                    //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/b/bc/Direct_Sunlight.png/revision/latest?cb=20151011014107"),
 
                 //run with the wind
                     new AnimeSceneImage(""),
@@ -111,8 +111,28 @@ public class DataLoader {
                     new AnimeSceneImage("https://cdn.vox-cdn.com/thumbor/KK-OXvweM2Y5zzcTVve0RUE6umQ=/0x53:1690x898/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/11651925/haruka_.jpg"),
                     new AnimeSceneImage("https://i.pinimg.com/originals/63/a5/69/63a5693992b0226916e0b5a26511115a.jpg"),
                     new AnimeSceneImage("https://i.cdn.turner.com/adultswim/big/image-upload/thumbnails/thumb-2_image-15381496590678.jpg"),
-                    new AnimeSceneImage("https://m.media-amazon.com/images/M/MV5BYzA2OWYwYzktMDM0ZC00YWQ1LWE3MTUtN2Y3NTY0YmM2ODk5XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg")
+                    new AnimeSceneImage("https://m.media-amazon.com/images/M/MV5BYzA2OWYwYzktMDM0ZC00YWQ1LWE3MTUtN2Y3NTY0YmM2ODk5XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg"),
 
+                //jojo
+                    new AnimeSceneImage("https://i.pinimg.com/originals/6c/62/bb/6c62bbe7c4db4f62173a1f60c216671e.jpg"),
+                    new AnimeSceneImage("https://occ-0-1007-34.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaHDjEjmTA5lhd5xLC5Q33YJ8J71kw2qYLukRMGPeKUzYOFoVCxZGJf1L8lTTwECmHjx2dgmT8-7DCv6ylAto5tPgKnpDG4mJ5FBwLo6zrmiiypbggmiznYA.jpg?r=308"),
+                    new AnimeSceneImage("https://img1.ak.crunchyroll.com/i/spire1-tmb/b876abc578c8bf0fab25a4591280cffa1396473017_full.jpg"),
+                    new AnimeSceneImage("https://animeuknews.net/app/uploads/2018/04/6-1.png"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/hVIsqLg6nWw/maxresdefault.jpg"),
+
+                //hajime no ippo
+                    new AnimeSceneImage("https://www.capsulecomputers.com.au/wp-content/uploads/2013/12/Hajime-No-Ippo-Episode-10-01.jpg"),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/ippo/images/c/c8/The_First_Step.png/revision/latest?cb=20210614123935"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/28UIP1Cgjs4/hqdefault.jpg"),
+                    new AnimeSceneImage("https://preview.redd.it/9hbc1te32mp01.png?auto=webp&s=4f424ec1a7a1c5685dcb93421b269f577bcdb49f"),
+                    new AnimeSceneImage("https://i.ytimg.com/vi/KJv7w_zz2wU/hqdefault.jpg"),
+
+                //hero academia
+                    new AnimeSceneImage("https://animecorner.me/wp-content/uploads/2021/07/My-Hero-Academia-Preview-Image-Episode-105.jpg"),
+                    new AnimeSceneImage("https://www.gamerevolution.com/wp-content/uploads/sites/2/2020/02/My-Hero-Academia-episode-80.jpg"),
+                    new AnimeSceneImage("https://i0.wp.com/butwhytho.net/wp-content/uploads/2022/10/My-Hero-Academia-Episode-114-But-Why-Tho.jpg?fit=800%2C410&ssl=1"),
+                    new AnimeSceneImage("https://www.gamerevolution.com/wp-content/uploads/sites/2/2022/11/my-hero-academia-season-6-episode-10-release-date-time-crunchyroll-2.jpg?resize=1200,630"),
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/bokunoheroacademia/images/9/98/Episode_123.png/revision/latest?cb=20221203170826")
 
                     ));
             animeSceneImageRepository.saveAll(animeSceneImages);
