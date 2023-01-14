@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -78,13 +79,6 @@ public class DataLoader {
                     //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/1/14/S4E14.png/revision/latest?cb=20200928112808"),
                     //new AnimeSceneImage("https://static.wikia.nocookie.net/haikyuu/images/b/bc/Direct_Sunlight.png/revision/latest?cb=20151011014107"),
 
-                //run with the wind
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-                    new AnimeSceneImage(""),
-
                 //kaiji
                     new AnimeSceneImage("https://img1.ak.crunchyroll.com/i/spire2/2ce6fc2b9becf670513d20a59562a6ee1662898642_main.jpg"),
                     new AnimeSceneImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeTjiZRipU9cgp3rUKM_kUtsU9G9n4g2cuRA&usqp=CAU"),
@@ -132,9 +126,24 @@ public class DataLoader {
                     new AnimeSceneImage("https://www.gamerevolution.com/wp-content/uploads/sites/2/2020/02/My-Hero-Academia-episode-80.jpg"),
                     new AnimeSceneImage("https://i0.wp.com/butwhytho.net/wp-content/uploads/2022/10/My-Hero-Academia-Episode-114-But-Why-Tho.jpg?fit=800%2C410&ssl=1"),
                     new AnimeSceneImage("https://www.gamerevolution.com/wp-content/uploads/sites/2/2022/11/my-hero-academia-season-6-episode-10-release-date-time-crunchyroll-2.jpg?resize=1200,630"),
-                    new AnimeSceneImage("https://static.wikia.nocookie.net/bokunoheroacademia/images/9/98/Episode_123.png/revision/latest?cb=20221203170826")
+                    new AnimeSceneImage("https://static.wikia.nocookie.net/bokunoheroacademia/images/9/98/Episode_123.png/revision/latest?cb=20221203170826"),
 
+                //dragon ball
+                    new AnimeSceneImage ("https://img4.hulu.com/user/v3/artwork/a1cf1e67-23f7-4d1b-840c-2e3873adfa57?base_image_bucket_name=image_manager&base_image=ace67f72-b95d-4f80-9fe9-e01dbb8d07ba&size=600x338&format=jpeg"),
+
+                //naruto
+                    new AnimeSceneImage ("https://staticg.sportskeeda.com/editor/2022/06/c41df-16548411749390-1920.jpg"),
+                    new AnimeSceneImage ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsY0quNM4kheYhUsrThKYfkdVsPWpDwtkYJA&usqp=CAU"),
+                    new AnimeSceneImage ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0YLKMQjO2Oa259Uap1LA3qtfdmc511DSCI64nN-SfBpgaJmBVxvcegr3tNRI-KV_oD1o&usqp=CAU"),
+
+                //evangelion
+                    new AnimeSceneImage ("http://4.bp.blogspot.com/-pa-tKtdQytk/VYonI7m2VLI/AAAAAAAAe34/dPBWME61JlU/s1600/Picture%2B1.png"),
+                    new AnimeSceneImage ("https://pictures.betaseries.com/banners/episodes/711/bff55a492756ff611d6b16af6f725160.jpg"),
+                    new AnimeSceneImage ("https://static.wikia.nocookie.net/evangelion/images/7/79/Episode_3-_A_Transfer.png/revision/latest?cb=20210717171033"),
+                    new AnimeSceneImage ("https://static.wikia.nocookie.net/evangelion/images/9/91/Episode_15.png/revision/latest?cb=20121216053159"),
+                    new AnimeSceneImage ("https://filmschoolrejects.com/wp-content/uploads/2019/03/Episode-26_Favorite-Shot-1.jpg")
                     ));
+            Collections.shuffle(animeSceneImages);
             animeSceneImageRepository.saveAll(animeSceneImages);
         } catch (Exception e){
             System.out.println("Users exist already in the database");
