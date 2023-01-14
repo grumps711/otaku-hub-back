@@ -44,8 +44,8 @@ public class AnimeService {
         return animeProxy.getEpisodeStreamingUrl(episodeId);
     }
 
-    public AnimesByScene getAnimesByScene(String url) {
-        return traceMoeProxy.getAnimesByScene(url);
+    public AnimesByScene getAnimesByScene(String apikey, String url) {
+        return traceMoeProxy.getAnimesByScene(apikey, url);
     }
 
     public AnimeSceneImage getRandomAnimeSceneImage() {

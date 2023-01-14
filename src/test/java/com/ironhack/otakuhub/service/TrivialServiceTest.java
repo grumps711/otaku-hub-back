@@ -59,7 +59,7 @@ class TrivialServiceTest {
 
     @Test
     void getTrivialSceneImage() {
-        var response = trivialService.getTrivialSceneImage();
+        var response = trivialService.getTrivialSceneImage("SATtVQ5QqUCXDShLldHXapLIZACp43TKLA7a24hFt5Q");
         assertTrue(response != null);
     }
 }

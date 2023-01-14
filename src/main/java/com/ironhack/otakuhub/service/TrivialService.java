@@ -76,9 +76,9 @@ public class TrivialService {
 
     }
 
-    public TrivialResponse getTrivialSceneImage() {
+    public TrivialResponse getTrivialSceneImage(String apikey) {
         var imageScene = animeService.getRandomAnimeSceneImage().getUrl();
-        var correctAnswer = traceMoeProxy.getAnimesByScene(imageScene).getPossibleAnimes().get(0).getAnimeInfo().getTitle().getRomajiTitle();
+        var correctAnswer = traceMoeProxy.getAnimesByScene(apikey, imageScene).getPossibleAnimes().get(0).getAnimeInfo().getTitle().getRomajiTitle();
         var otherTwoAnswers = getOtherTwoAnswers(correctAnswer);
 
         return new TrivialResponse(imageScene,null,correctAnswer, otherTwoAnswers.get(0), otherTwoAnswers.get(1));

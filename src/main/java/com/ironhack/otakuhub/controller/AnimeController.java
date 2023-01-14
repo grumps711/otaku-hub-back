@@ -59,7 +59,8 @@ public class AnimeController {
 
     @GetMapping ("/search/byScene")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public AnimesByScene getAnimesByScene (@RequestParam String url) {
-        return animeService.getAnimesByScene (url);
+    public AnimesByScene getAnimesByScene (@RequestHeader(name = "x-trace-key") String apikey,
+                                           @RequestParam String url) {
+        return animeService.getAnimesByScene (apikey, url);
     }
 }

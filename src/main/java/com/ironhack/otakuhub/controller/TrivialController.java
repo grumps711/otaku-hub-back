@@ -23,8 +23,8 @@ public class TrivialController {
 
     @GetMapping("/sceneImage")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public TrivialResponse getTrivialSceneImage () {
-        return trivialService.getTrivialSceneImage ();
+    public TrivialResponse getTrivialSceneImage (@RequestHeader(name = "x-trace-key") String apikey) {
+        return trivialService.getTrivialSceneImage (apikey);
     }
 
 }
