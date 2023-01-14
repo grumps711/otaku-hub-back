@@ -34,10 +34,17 @@ public class DataLoader {
             userRepository.save(user1);
             log.info("User " + user1.getUsername() + " was created successfully");
 
-            User user2 = new User("admin", passwordEncoder.encode("admin"), "ROLE_USER, ROLE_ADMIN");
+            User user2 = new User("admin", passwordEncoder.encode("admin"), "ROLE_USER,ROLE_ADMIN");
             userRepository.save(user2);
             log.info("User " + user2.getUsername() + " was created successfully");
             log.info("Finished demo user loading.");
+
+           User user3 = new User("admin2", passwordEncoder.encode("admin2"), "ROLE_USER,ROLE_ADMIN");
+           userRepository.save(user3);
+           log.info("User " + user3.getUsername() + " was created successfully");
+           log.info("Finished demo user loading.");
+
+
         } catch (Exception e){
            System.out.println("Users exist already in the database");
            System.out.println(e.getMessage());
