@@ -2,9 +2,9 @@
 <img src="docs/text-1673644554952.png" alt="otaku-hub" width="1400"/>        
 <img src="docs/manga-tekeningen.jpg" alt="otaku-hub" width="1400"/>
 
-# Introduction
 
-API: Search, store, watch and play to our Trivial... Anime Everywhere.
+
+<p style="text-align: center;">API: Search, store, watch and play to our Trivial... Anime Everywhere.</p>
 
 # Endpoints
 
@@ -64,6 +64,19 @@ GET ``http://localhost:80/users/getByUsername``
 
 PATCH ``http://localhost:80/users/updateByUser/{{username}}``
 
+# External APIs
+
+### GogoAnime API,
+a free anime streaming restful API serving anime from Gogoanime (https://github.com/riimuru/gogoanime-api)
+
+### AnimeChan API,
+A free restful API serving quality anime quotes (https://animechan.vercel.app/)
+
+### TraceMoe API,
+Anime Scene Seach Engine that can trace back the scene where an anime screenshots is taken from (https://soruly.github.io/trace.moe-api/#/)
+
+# API Demo (front-end vuejs)
+ Comming soon.. ^^
 
 <hr>
 
