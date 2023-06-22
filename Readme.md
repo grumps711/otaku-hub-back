@@ -87,10 +87,9 @@ Ojo, Euge se deja dinerito :moneybag: .. Ayer a cambiarlo todo para poner apiKey
 
 <br>
 
-# Public API Demo (frontend vuejs)
-Ngrok betrayed us... :sob:
+# Front-end
 
-But comming soon!! :wink:
+https://github.com/grumps711/otaku-hub-front-p4b
 
 <br>
 <hr>
